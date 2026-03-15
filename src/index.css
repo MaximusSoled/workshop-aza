@@ -16,7 +16,7 @@
     --primary: 228 100% 59%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 50% 20%;
+    --secondary: 220 50% 14%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 40% 15%;
@@ -28,21 +28,22 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 30% 18%;
+    --border: 220 30% 20%;
     --input: 220 30% 18%;
     --ring: 228 100% 59%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    /* Brand-specific tokens */
+    /* Brand tokens */
     --brand-deep: 216 60% 7%;
     --brand-electric: 228 100% 59%;
-    --brand-midnight: 220 50% 23%;
+    --brand-midnight: 220 50% 12%;
     --brand-soft: 216 100% 77%;
     --brand-cyan: 180 40% 80%;
     --brand-highlight: 228 100% 65%;
     --brand-alert: 0 100% 60%;
     --brand-charcoal: 0 0% 5%;
+    --brand-surface: 220 45% 16%;
 
     --sidebar-background: 216 60% 7%;
     --sidebar-foreground: 0 0% 100%;
@@ -61,7 +62,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
     font-family: 'Montserrat', sans-serif;
   }
 
@@ -72,17 +73,57 @@
 
 @layer components {
   .section-container {
-    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+    @apply max-w-2xl mx-auto px-5 sm:px-6 py-16 md:py-24;
+  }
+
+  .section-wide {
+    @apply max-w-4xl mx-auto px-5 sm:px-6 py-16 md:py-24;
   }
 
   .headline-primary {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight;
+    @apply text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight;
   }
 
   .headline-secondary {
-    @apply text-xl sm:text-2xl md:text-3xl font-bold leading-snug;
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold leading-snug;
   }
 
+  .font-handwritten {
+    font-family: 'Caveat', cursive;
+  }
+
+  /* Marker highlight effect - electric blue */
+  .marker-highlight {
+    background: linear-gradient(
+      to top,
+      hsl(228 100% 59% / 0.3) 0%,
+      hsl(228 100% 59% / 0.3) 40%,
+      transparent 40%
+    );
+    padding: 0 4px;
+    display: inline;
+  }
+
+  /* Marker highlight - alert red */
+  .marker-alert {
+    background: linear-gradient(
+      to top,
+      hsl(0 100% 60% / 0.25) 0%,
+      hsl(0 100% 60% / 0.25) 40%,
+      transparent 40%
+    );
+    padding: 0 4px;
+    display: inline;
+  }
+
+  /* Strikethrough with style */
+  .strike-through {
+    text-decoration: line-through;
+    text-decoration-color: hsl(0 100% 60% / 0.7);
+    text-decoration-thickness: 2px;
+  }
+
+  /* Brand colors as utility */
   .text-electric {
     color: hsl(var(--brand-electric));
   }
@@ -99,16 +140,16 @@
     color: hsl(var(--brand-cyan));
   }
 
-  .bg-brand-deep {
+  .bg-deep {
     background-color: hsl(var(--brand-deep));
   }
 
-  .bg-brand-midnight {
+  .bg-midnight {
     background-color: hsl(var(--brand-midnight));
   }
 
-  .bg-brand-electric {
-    background-color: hsl(var(--brand-electric));
+  .bg-surface {
+    background-color: hsl(var(--brand-surface));
   }
 
   .gradient-electric {
@@ -116,26 +157,77 @@
   }
 
   .gradient-deep {
-    background: linear-gradient(180deg, hsl(var(--brand-deep)), hsl(var(--brand-midnight)));
+    background: linear-gradient(180deg, hsl(216 60% 7%), hsl(220 50% 12%));
   }
 
   .glow-electric {
-    box-shadow: 0 0 40px hsl(var(--brand-electric) / 0.3), 0 0 80px hsl(var(--brand-electric) / 0.1);
+    box-shadow: 0 0 30px hsl(228 100% 59% / 0.25), 0 0 60px hsl(228 100% 59% / 0.08);
   }
 
-  .pain-text {
-    @apply text-lg md:text-xl font-medium leading-relaxed;
-    color: hsl(var(--muted-foreground));
+  .glow-electric-strong {
+    box-shadow: 0 0 40px hsl(228 100% 59% / 0.4), 0 0 80px hsl(228 100% 59% / 0.15);
   }
 
+  /* Chat bubble styles */
+  .bubble {
+    @apply rounded-2xl px-5 py-4 text-sm md:text-base relative;
+    background-color: hsl(var(--brand-surface));
+    border: 1px solid hsl(220 30% 22%);
+  }
+
+  .bubble-electric {
+    @apply rounded-2xl px-5 py-4 text-sm md:text-base;
+    background-color: hsl(228 100% 59% / 0.15);
+    border: 1px solid hsl(228 100% 59% / 0.3);
+  }
+
+  /* Badge style */
+  .info-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold;
+    background-color: hsl(var(--brand-surface));
+    border: 1px solid hsl(220 30% 22%);
+  }
+
+  /* Check item */
+  .check-item {
+    @apply flex items-start gap-3 py-3 px-4 rounded-lg border transition-colors;
+    border-color: hsl(220 30% 20%);
+    background: hsl(220 45% 16% / 0.5);
+  }
+
+  .check-item:hover {
+    border-color: hsl(228 100% 59% / 0.3);
+  }
+
+  /* Divider with line */
+  .section-divider {
+    @apply w-full h-px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(228 100% 59% / 0.3) 50%,
+      transparent 100%
+    );
+  }
+
+  /* Pain list items */
   .list-pain li {
     @apply py-2 pl-4 border-l-2 text-base md:text-lg;
-    border-color: hsl(var(--brand-alert) / 0.5);
+    border-color: hsl(0 100% 60% / 0.5);
     color: hsl(var(--muted-foreground));
   }
 
-  .list-method li {
-    @apply py-3 pl-4 border-l-2 text-base md:text-lg;
-    border-color: hsl(var(--brand-electric));
+  /* Cycle step badge */
+  .cycle-step {
+    @apply px-3 py-2 rounded-lg text-xs md:text-sm font-medium text-center;
+    background: hsl(var(--brand-surface));
+    border: 1px solid hsl(220 30% 22%);
+  }
+
+  /* Result badge - cascading style */
+  .result-badge {
+    @apply flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-base md:text-lg border;
+    border-color: hsl(228 100% 59% / 0.3);
+    background: hsl(228 100% 59% / 0.08);
   }
 }

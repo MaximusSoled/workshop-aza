@@ -1,94 +1,121 @@
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+
+const cycleSteps = [
+  "Investe em anúncios",
+  "Leads desqualificados",
+  "Secretária responde mal",
+  "Paciente some",
+  "Culpa o tráfego",
+  "Troca de agência",
+];
 
 const PainDiagnosis = () => {
   return (
-    <section className="bg-brand-midnight">
-      <div className="section-container">
+    <section className="bg-midnight">
+      <div className="section-divider" />
+      <div className="section-container space-y-12">
+        {/* Result question */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto"
+          className="text-center"
         >
-          <p className="pain-text text-center mb-2">E o resultado?</p>
+          <span className="inline-block gradient-electric px-6 py-2 rounded-full text-sm font-bold mb-8">
+            E o resultado?
+          </span>
 
-          <div className="space-y-6 text-center my-8">
-            <p className="text-muted-foreground text-lg">
-              Alguns leads chegaram. Algumas consultas marcadas. Uma cirurgia aqui, outra ali.{" "}
-              <span className="text-foreground">Um mês bom.</span>
+          <div className="space-y-4 text-base md:text-lg text-muted-foreground max-w-lg mx-auto">
+            <p>
+              Às vezes <span className="marker-highlight text-foreground">um mês bom</span>. Algumas consultas.
+              Uma cirurgia que <span className="marker-highlight text-foreground">te dá esperança</span>.
             </p>
-            <p className="text-muted-foreground text-lg">
-              Mas no mês seguinte?{" "}
-              <span className="text-alert">Agenda vazia de novo.</span>{" "}
-              Leads sumindo. Secretária sem saber o que responder.{" "}
-              <span className="text-alert">Você frustrado.</span>
+            <p>
+              Mas no mês seguinte,{" "}
+              <span className="marker-alert text-foreground">volta tudo ao normal</span>.
+              Agenda esvazia. Leads somem.{" "}
+              <span className="font-handwritten text-alert text-2xl">A frustração cresce.</span>
             </p>
-            <p className="text-muted-foreground text-lg">
-              E aquele mês bom não gerou <strong className="text-foreground">previsibilidade</strong>,
-              não gerou <strong className="text-foreground">sistema</strong>,
-              não construiu <strong className="text-foreground">nada</strong>.
+            <p>
+              E aquele mês bom que ficou,{" "}
+              <strong className="text-foreground">não gerou previsibilidade</strong>,{" "}
+              <strong className="text-foreground">não gerou sistema</strong>,{" "}
+              <span className="marker-alert text-foreground font-bold">não construiu nada</span>.
             </p>
           </div>
-
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="text-center mt-12 p-8 rounded-lg border border-brand-electric/20 bg-brand-deep"
-          >
-            <p className="text-muted-foreground text-lg mb-2">Isso tem nome.</p>
-            <h3 className="text-2xl md:text-3xl font-extrabold text-electric mb-6">
-              Ciclo da Clínica Capilar Instável
-            </h3>
-
-            {/* Cycle visualization */}
-            <div className="flex flex-wrap justify-center gap-2 text-sm text-muted-foreground mb-8">
-              {[
-                "Investe em anúncios",
-                "→",
-                "Leads desqualificados",
-                "→",
-                "Secretária responde mal",
-                "→",
-                "Paciente some",
-                "→",
-                "Culpa o tráfego",
-                "→",
-                "Troca de agência",
-                "→",
-                "🔄",
-              ].map((item, i) => (
-                <span
-                  key={i}
-                  className={item === "→" || item === "🔄" ? "text-electric font-bold" : "bg-secondary px-3 py-1 rounded-full"}
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="text-center mt-12"
-          >
-            <p className="text-lg text-muted-foreground">
-              O problema é que ninguém te ensinou a{" "}
-              <strong className="text-electric">converter</strong>.
-            </p>
-            <p className="text-lg text-muted-foreground mt-2">
-              Te ensinaram a <span className="text-alert">atrair</span>.
-            </p>
-            <p className="text-xl font-bold mt-4">
-              E tem uma diferença <span className="text-electric">brutal</span> entre as duas coisas.
-            </p>
-          </motion.div>
         </motion.div>
+
+        {/* Pain name */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center space-y-3"
+        >
+          <p className="text-muted-foreground text-sm">Isso tem nome.</p>
+          <h3 className="text-2xl md:text-3xl font-extrabold">
+            Eu chamo de{" "}
+            <span className="font-handwritten text-electric text-4xl md:text-5xl marker-highlight">
+              Ciclo da Clínica Capilar Instável
+            </span>
+          </h3>
+          <p className="text-muted-foreground text-sm mt-2">É um ciclo. E funciona assim:</p>
+        </motion.div>
+
+        {/* Cycle diagram */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="relative max-w-md mx-auto"
+        >
+          <div className="grid grid-cols-2 gap-3">
+            {cycleSteps.map((step, i) => (
+              <div key={i} className="cycle-step">
+                <span className="text-electric font-bold mr-1">{i + 1}.</span>
+                {step}
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-4">
+            <span className="font-handwritten text-3xl text-alert">🔄 O ciclo recomeça</span>
+          </div>
+          <p className="text-center text-xs text-muted-foreground mt-3 italic">
+            Cada volta nesse ciclo custa tempo, energia e dinheiro.
+          </p>
+        </motion.div>
+
+        {/* Root cause */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="bubble-electric max-w-lg mx-auto text-center space-y-3"
+        >
+          <p className="text-muted-foreground">
+            O problema é que <span className="text-foreground font-semibold underline decoration-brand-electric">ninguém te ensinou a converter</span>.
+          </p>
+          <p className="text-muted-foreground">
+            Te ensinaram a <span className="strike-through">atrair</span>.
+          </p>
+          <p className="font-bold text-lg text-foreground">
+            E tem uma <span className="font-handwritten text-electric text-3xl">diferença brutal</span>{" "}
+            entre as duas coisas.
+          </p>
+        </motion.div>
+
+        {/* CTA */}
+        <div className="text-center">
+          <Button
+            variant="cta"
+            size="lg"
+            className="px-10 py-6"
+            onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
+          >
+            Adquirir ingresso agora
+          </Button>
+        </div>
       </div>
     </section>
   );

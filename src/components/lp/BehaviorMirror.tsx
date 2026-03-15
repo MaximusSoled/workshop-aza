@@ -1,42 +1,70 @@
 import { motion } from "framer-motion";
 
 const actions = [
-  "Aumentou o investimento em anúncios",
-  "Trocou de agência — talvez mais de uma vez",
-  "Contratou uma secretária nova achando que o problema era atendimento",
-  "Tentou fazer conteúdo nas redes sociais, mesmo sem tempo",
-  "Trabalhou nos finais de semana para compensar a agenda vazia",
+  { text: "investiu mais em anúncios", handwritten: true },
+  { text: "trocou de agência", handwritten: true },
+  { text: "contratou secretária nova", handwritten: true },
+  { text: "tentou fazer conteúdo", handwritten: true },
+  { text: "trabalhou fim de semana", handwritten: true },
+];
+
+const extraActions = [
+  "Seguiu o conselho do colega.",
+  "Gravou quando não sabia o que dizer...",
+  "...se forçou a investir mais sem saber se ia voltar.",
 ];
 
 const BehaviorMirror = () => {
   return (
-    <section className="bg-brand-deep">
+    <section className="bg-deep">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="text-center space-y-10"
         >
-          <h2 className="headline-secondary text-center mb-12">
-            E você <span className="text-electric">obedeceu...</span>
+          <h2 className="text-2xl md:text-3xl">
+            E você <span className="font-handwritten text-electric text-4xl md:text-5xl">obedeceu...</span>
           </h2>
 
-          <div className="max-w-2xl mx-auto space-y-4">
+          {/* Action cards - stacked like screenshots */}
+          <div className="space-y-4 max-w-sm mx-auto">
             {actions.map((action, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex items-start gap-3"
+                className="bg-surface rounded-xl overflow-hidden border border-border"
               >
-                <span className="text-electric mt-1 text-lg">✓</span>
-                <p className={`text-base md:text-lg ${i >= 3 ? "text-muted-foreground italic" : "text-muted-foreground"}`}>
-                  {action}
+                <div className="h-2 gradient-electric" />
+                <p className="font-handwritten text-2xl md:text-3xl py-4 px-5 text-muted-foreground">
+                  {action.text}
                 </p>
               </motion.div>
+            ))}
+          </div>
+
+          {/* Extra emotional escalation */}
+          <div className="space-y-3 pt-4">
+            {extraActions.map((text, i) => (
+              <motion.p
+                key={i}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 + i * 0.15 }}
+                className={`text-base ${
+                  i === extraActions.length - 1
+                    ? "text-foreground font-semibold italic"
+                    : "text-muted-foreground"
+                }`}
+              >
+                {text}
+              </motion.p>
             ))}
           </div>
         </motion.div>

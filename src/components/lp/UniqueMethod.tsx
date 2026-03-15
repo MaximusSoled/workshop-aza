@@ -1,88 +1,150 @@
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Users, TrendingUp, Zap } from "lucide-react";
 
 const methodSteps = [
   { letter: "R", title: "Receber leads qualificados", desc: "Atraia os pacientes certos, não apenas volume." },
-  { letter: "U", title: "Humanizar o atendimento", desc: "Transforme o primeiro contato em confiança." },
+  { letter: "U", title: "Humanizar o atendimento", desc: "Transforme o primeiro contato em confiança real." },
   { letter: "M", title: "Monetizar os contatos", desc: "Converta interesse em consultas pagas." },
   { letter: "O", title: "Otimizar o fechamento", desc: "Feche mais cirurgias com previsibilidade." },
 ];
 
+const results = [
+  { icon: Users, text: "+PACIENTES" },
+  { icon: TrendingUp, text: "+FATURAMENTO" },
+  { icon: Zap, text: "+PREVISIBILIDADE" },
+];
+
 const UniqueMethod = () => {
   return (
-    <section className="bg-brand-deep">
-      <div className="section-container">
+    <section className="bg-deep">
+      <div className="section-divider" />
+      <div className="section-container space-y-12">
+        {/* Intro */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center space-y-4"
         >
-          <p className="text-electric text-sm uppercase tracking-widest font-semibold mb-4">
-            A saída do ciclo
-          </p>
-          <h2 className="headline-secondary mb-6">
+          <p className="text-sm text-muted-foreground">Mas afinal, qual é a saída?</p>
+          <h2 className="headline-secondary">
             Você pode ser os{" "}
-            <span className="text-alert">5%</span> que colhem{" "}
-            <span className="text-alert">80%</span> dos resultados
+            <span className="font-handwritten text-electric text-4xl md:text-5xl">5% diferente</span>{" "}
+            que colhe{" "}
+            <span className="font-handwritten text-electric text-4xl md:text-5xl">80% dos resultados</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Um mito precisa ser quebrado: o mercado{" "}
-            <strong className="text-foreground">não premia</strong> quem investe mais em anúncios,
-            nem quem tem mais seguidores, nem quem troca de agência todo mês.
-          </p>
-          <p className="text-foreground text-lg mt-4 max-w-2xl mx-auto font-medium">
-            Ele premia quem tem{" "}
-            <span className="text-electric font-bold">sistema para transformar leads em pacientes</span>{" "}
-            e previsibilidade no fechamento.
-          </p>
         </motion.div>
 
-        {/* Method cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto mb-16">
-          {methodSteps.map((step, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="bg-secondary rounded-lg p-6 border border-border hover:border-brand-electric/40 transition-colors"
-            >
-              <span className="text-3xl font-black text-electric">{step.letter}</span>
-              <h3 className="text-lg font-bold mt-2 mb-1">{step.title}</h3>
-              <p className="text-sm text-muted-foreground">{step.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-
+        {/* Myth busting */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="bubble-electric max-w-lg mx-auto text-center"
         >
-          <p className="text-muted-foreground text-base max-w-2xl mx-auto">
-            <strong className="text-electric">Método R.U.M.O.</strong> é isso: um método de gestão de conversão
-            que usa psicologia da decisão do paciente estético e gestão de funis de vendas para transformar{" "}
-            <span className="text-foreground font-semibold">leads frios em pacientes na sua agenda</span>.
+          <p className="text-sm font-semibold text-foreground mb-2">Um mito precisa ser quebrado:</p>
+          <p className="text-muted-foreground">
+            o mercado <span className="strike-through">não premia quem investe mais</span>,
+            nem quem <span className="strike-through">tem mais seguidores</span>,
+            nem <span className="strike-through">a melhor agência</span>.
           </p>
-
-          <div className="mt-10 p-6 rounded-lg bg-brand-midnight border border-border max-w-2xl mx-auto">
-            <p className="text-sm uppercase tracking-widest text-alert font-bold mb-3">
-              ENTÃO CHEGA DE:
-            </p>
-            <p className="text-muted-foreground text-base">
-              Trocar de agência todo mês, culpar o tráfego e depender apenas de indicações.
-              <br />
-              <span className="text-foreground font-medium mt-2 block">
-                O que sustenta o resultado é{" "}
-                <span className="text-electric">sistema</span> com{" "}
-                <span className="text-electric">execução</span>.
-              </span>
-            </p>
-          </div>
         </motion.div>
+
+        {/* Truth */}
+        <div className="text-center space-y-2">
+          <p className="text-muted-foreground">Ele premia aqueles que conseguem</p>
+          <h3 className="text-3xl md:text-4xl font-extrabold">
+            <span className="marker-highlight">converter leads</span>
+            <span className="text-muted-foreground text-2xl"> & </span>
+            <span className="marker-highlight">fechar pacientes.</span>
+          </h3>
+        </div>
+
+        {/* Result badges - cascading */}
+        <div className="max-w-xs mx-auto space-y-3">
+          {results.map((r, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: (i % 2 === 0 ? -1 : 1) * 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+              className={`result-badge ${i === 0 ? "ml-0" : i === 1 ? "ml-8" : "ml-4"}`}
+            >
+              <r.icon className="w-5 h-5 text-electric flex-shrink-0" />
+              <span className="text-electric">{r.text}</span>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Method definition */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center space-y-2"
+        >
+          <p className="font-handwritten text-electric text-3xl md:text-4xl">Método R.U.M.O.</p>
+          <p className="text-sm text-muted-foreground">é isso:</p>
+          <p className="text-base text-muted-foreground max-w-lg mx-auto">
+            um método de <span className="underline decoration-brand-electric text-foreground">gestão de conversão</span> que
+            usa <span className="text-foreground font-medium">psicologia da decisão do paciente estético</span> para
+            transformar <span className="marker-highlight text-foreground font-semibold">leads frios em pacientes na sua agenda</span>.
+          </p>
+        </motion.div>
+
+        {/* Method cards */}
+        <div className="space-y-3 max-w-md mx-auto">
+          {methodSteps.map((step, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="bg-surface rounded-xl p-5 border border-border hover:border-brand-electric/40 transition-all flex items-start gap-4"
+            >
+              <span className="text-3xl font-black text-electric font-handwritten">{step.letter}</span>
+              <div>
+                <h4 className="font-bold text-sm">{step.title}</h4>
+                <p className="text-xs text-muted-foreground mt-0.5">{step.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Anti-promise */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center space-y-4 pt-4"
+        >
+          <p className="text-xl font-extrabold">
+            ENTÃO CHEGA DE{" "}
+            <span className="font-handwritten text-alert text-3xl strike-through">TROCAR DE AGÊNCIA</span>{" "}
+            E{" "}
+            <span className="font-handwritten text-alert text-3xl strike-through">CULPAR O TRÁFEGO</span>
+          </p>
+          <p className="text-sm text-muted-foreground max-w-md mx-auto">
+            Esse tipo de coisa só funciona pra quem está vendendo curso de marketing.
+            O que sustenta o resultado é a{" "}
+            <span className="font-handwritten text-electric text-xl">mensagem certa, com o sistema certo.</span>
+          </p>
+        </motion.div>
+
+        {/* CTA */}
+        <div className="text-center">
+          <Button
+            variant="cta"
+            size="lg"
+            className="px-10 py-6"
+            onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
+          >
+            Garantir agora o meu ingresso
+          </Button>
+        </div>
       </div>
     </section>
   );

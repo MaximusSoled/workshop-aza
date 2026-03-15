@@ -1,3 +1,4 @@
+import { ArrowUp } from "lucide-react";
 import HeroSection from "@/components/lp/HeroSection";
 import BeliefRupture from "@/components/lp/BeliefRupture";
 import BehaviorMirror from "@/components/lp/BehaviorMirror";
@@ -26,14 +27,25 @@ const Index = () => {
       <FaqSection />
 
       {/* Footer */}
-      <footer className="bg-brand-deep border-t border-border py-8 text-center">
-        <p className="text-sm text-muted-foreground">
-          © 2026 Hiago Lemos · Workshop Clínica Capilar Lucrativa
-        </p>
-        <p className="text-xs text-muted-foreground mt-2">
-          Este produto não garante a obtenção de resultados. Qualquer referência ao desempenho
-          de uma estratégia não deve ser interpretada como uma garantia de resultado.
-        </p>
+      <footer className="bg-midnight border-t border-border py-8">
+        <div className="max-w-2xl mx-auto px-5 flex flex-col items-center gap-4">
+          <p className="text-xs text-muted-foreground text-center">
+            © 2026 Hiago Lemos. Todos os direitos reservados.
+          </p>
+          <p className="text-xs text-muted-foreground text-center max-w-md">
+            Este produto não garante a obtenção de resultados. Qualquer referência ao desempenho
+            de uma estratégia não deve ser interpretada como uma garantia de resultado.
+          </p>
+          <div className="flex items-center gap-4">
+            <button
+              className="info-badge cursor-pointer hover:border-brand-electric/50 transition-colors"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              <ArrowUp className="w-3.5 h-3.5 text-electric" />
+              Voltar ao topo
+            </button>
+          </div>
+        </div>
       </footer>
     </main>
   );

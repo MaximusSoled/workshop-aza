@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import hiagoPhoto from "@/assets/hiago-photo.png";
 const AuthoritySection = () => {
   return (
     <section className="bg-midnight">

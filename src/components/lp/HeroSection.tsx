@@ -83,13 +83,23 @@ const HeroSection = () => {
 
             {/* Progress bar */}
             <div className="space-y-1.5">
-              <div className="h-1.5 rounded-full overflow-hidden bg-border/50">
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: "20%" }}
-                  transition={{ delay: 1, duration: 1.2, ease: "easeOut" }}
-                  className="h-full rounded-full gradient-electric"
-                />
+              <div className="flex items-center gap-2">
+                <div className="h-1.5 rounded-full overflow-hidden bg-border/50 flex-1">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: "20%" }}
+                    transition={{ delay: 1, duration: 1.2, ease: "easeOut" }}
+                    className="h-full rounded-full gradient-electric"
+                  />
+                </div>
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 2 }}
+                  className="text-xs font-bold text-electric min-w-[28px] text-right"
+                >
+                  20%
+                </motion.span>
               </div>
               <p className="text-xs text-muted-foreground">
                 <span className="text-electric font-semibold">Lote 1</span> —{" "}

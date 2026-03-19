@@ -64,34 +64,33 @@ const FaqSection = () => {
           ))}
         </Accordion>
 
-        {/* WhatsApp CTA */}
+        {/* Final CTA */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="text-center space-y-4 pt-6"
         >
-          <p className="text-lg text-foreground">
-            Ainda com dúvidas sobre o{" "}
-            <span className="font-handwritten text-electric text-2xl">Workshop</span>?
+          <p className="text-lg text-foreground font-semibold">
+            Pronto para sair do{" "}
+            <span className="font-handwritten text-alert text-2xl">ciclo da instabilidade</span>?
           </p>
-          <p className="text-sm text-muted-foreground">
-            Basta tocar no botão abaixo e{" "}
-            <span className="text-electric font-semibold">eu mesmo</span> irei lhe atender!
+          <p className="text-sm text-muted-foreground max-w-md mx-auto">
+            Garanta seu ingresso agora e aprenda o sistema que vai transformar sua clínica capilar em uma{" "}
+            <span className="text-electric font-semibold">máquina previsível de conversão</span>.
           </p>
 
           <Button
-            variant="whatsapp"
+            variant="cta"
             size="lg"
             className="py-6 px-10 text-base"
-            onClick={() => window.open("https://wa.me/", "_blank")}
+            onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
           >
-            <MessageCircle className="w-5 h-5" />
-            ATENDIMENTO VIA WHATSAPP
+            Garantir meu ingresso agora →
           </Button>
 
           <p className="text-xs text-muted-foreground">
-            Envie uma mensagem para: <span className="text-foreground">(XX) XXXXX-XXXX</span>
+            🔒 Vagas limitadas · Pagamento 100% seguro
           </p>
         </motion.div>
       </div>

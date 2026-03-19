@@ -13,10 +13,11 @@ import OfferSection from "@/components/lp/OfferSection";
 import TestimonialsSection from "@/components/lp/TestimonialsSection";
 import AuthoritySection from "@/components/lp/AuthoritySection";
 import FaqSection from "@/components/lp/FaqSection";
+import FloatingCTA from "@/components/lp/FloatingCTA";
 
 const Index = () => {
   return (
-    <main className="overflow-x-hidden">
+    <main className="overflow-x-hidden scroll-smooth">
       <HeroSection />
       <QualificationFilter />
       <BeliefRupture />
@@ -31,6 +32,8 @@ const Index = () => {
       <TestimonialsSection />
       <AuthoritySection />
       <FaqSection />
+
+      <FloatingCTA />
 
       {/* Footer */}
       <footer className="bg-midnight border-t border-border py-8">

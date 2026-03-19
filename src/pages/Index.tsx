@@ -33,6 +33,8 @@ const Index = () => {
       <AuthoritySection />
       <FaqSection />
 
+      <FloatingCTA />
+
       {/* Footer */}
       <footer className="bg-midnight border-t border-border py-8">
         <div className="max-w-2xl mx-auto px-5 flex flex-col items-center gap-4">

@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { ArrowUp } from "lucide-react";
+import { Link } from "react-router-dom";
 import CookieConsent from "@/components/CookieConsent";
 import HeroSection from "@/components/lp/HeroSection";
 
@@ -52,6 +53,15 @@ const Index = () => {
             Este produto não garante a obtenção de resultados. Qualquer referência ao desempenho
             de uma estratégia não deve ser interpretada como uma garantia de resultado.
           </p>
+          <div className="flex items-center gap-3 flex-wrap justify-center">
+            <Link to="/politica-de-privacidade" className="text-xs text-muted-foreground hover:text-electric transition-colors underline">
+              Política de Privacidade
+            </Link>
+            <span className="text-muted-foreground/40 text-xs">•</span>
+            <Link to="/termos-de-uso" className="text-xs text-muted-foreground hover:text-electric transition-colors underline">
+              Termos de Uso
+            </Link>
+          </div>
           <div className="flex items-center gap-4">
             <button
               className="info-badge cursor-pointer hover:border-brand-electric/50 transition-colors"

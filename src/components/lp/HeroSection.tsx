@@ -32,8 +32,9 @@ const HeroSection = () => {
               Especialista em implante capilar,
             </p>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight">
-              1 dia para você Construir a sua{" "}
-              <span className="marker-highlight">Clínica Lucrativa</span> do Zero.
+              Vou te mostrar o exato sistema que aplico para{" "}
+              <span className="marker-highlight">CONVERTER</span> os leads da sua agenda em{" "}
+              <span className="marker-highlight">VENDAS</span>
             </h1>
           </div>
 

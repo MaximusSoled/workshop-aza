@@ -29,9 +29,9 @@ const UniqueMethod = () => {
         >
           <p className="text-sm text-muted-foreground">Mas afinal, qual é a saída?</p>
           <h2 className="headline-secondary">
-            Você pode ser os{" "}
-            <span className="font-handwritten text-electric text-4xl md:text-5xl">5% diferente</span>{" "}
-            que colhe{" "}
+            Você pode fazer parte dos{" "}
+            <span className="font-handwritten text-electric text-4xl md:text-5xl">5%</span>{" "}
+            que colhem{" "}
             <span className="font-handwritten text-electric text-4xl md:text-5xl">80% dos resultados</span>
           </h2>
         </motion.div>

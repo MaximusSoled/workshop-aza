@@ -57,7 +57,7 @@ const BeliefRupture = () => {
                   key={i}
                   className={`font-handwritten text-xl md:text-2xl ${
                     i === badAdvice.length - 1
-                      ? "text-brand-alert font-bold"
+                      ? "text-alert font-bold"
                       : "text-muted-foreground"
                   }`}
                 >

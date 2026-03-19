@@ -92,8 +92,8 @@ const HeroSection = () => {
                 />
               </div>
               <p className="text-xs text-muted-foreground">
-                <span className="text-electric font-semibold">20%</span> dos ingressos vendidos a{" "}
-                <span className="text-foreground font-semibold">R$ 49,00</span>
+                <span className="text-electric font-semibold">Lote 1</span> —{" "}
+                <span className="text-foreground font-semibold">vagas limitadas</span>
               </p>
             </div>
           </motion.div>

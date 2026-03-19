@@ -9,6 +9,7 @@ import NarrativeUrgency from "@/components/lp/NarrativeUrgency";
 import HowItWorks from "@/components/lp/HowItWorks";
 import EventSchedule from "@/components/lp/EventSchedule";
 import OfferSection from "@/components/lp/OfferSection";
+import TestimonialsSection from "@/components/lp/TestimonialsSection";
 import AuthoritySection from "@/components/lp/AuthoritySection";
 import FaqSection from "@/components/lp/FaqSection";
 

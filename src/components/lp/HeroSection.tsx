@@ -40,9 +40,9 @@ const HeroSection = () => {
 
           {/* Subheadline */}
           <p className="text-sm md:text-base max-w-lg mx-auto leading-relaxed text-muted-foreground">
-            Vamos construir seu <strong className="text-foreground">sistema de conversão</strong> com
-            a minha orientação ao vivo, vou te entregar o{" "}
-            <strong className="text-foreground">Método R.U.M.O.</strong> e você vai sair com um{" "}
+            <strong className="text-foreground">Ao vivo</strong> vamos construir seu{" "}
+            <strong className="text-foreground">sistema de conversão</strong> utilizando o{" "}
+            <strong className="text-foreground">Método R.U.M.O.</strong> você vai sair com um{" "}
             <span className="marker-highlight font-semibold text-foreground">plano de ação pronto</span>{" "}
             para aplicar na sua clínica.{" "}
             <strong className="text-foreground">Clique e garanta sua vaga.</strong>

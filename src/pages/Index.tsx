@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { ArrowUp } from "lucide-react";
+import { Link } from "react-router-dom";
 import CookieConsent from "@/components/CookieConsent";
 import HeroSection from "@/components/lp/HeroSection";
 

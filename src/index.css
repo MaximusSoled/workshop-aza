@@ -61,6 +61,29 @@
     @apply border-border;
   }
 
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--brand-deep));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--brand-surface));
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--brand-electric) / 0.5);
+  }
+
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--brand-surface)) hsl(var(--brand-deep));
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Montserrat', sans-serif;

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Check, Calendar, Clock, Video, Users, TrendingUp, ShieldCheck, Flame } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Check, TrendingUp, ShieldCheck, Users } from "lucide-react";
 
 const included = [
   "Workshop completo ao vivo (9h às 18h) com construção prática",

@@ -11,6 +11,7 @@ import {
 const testimonials = [
   {
     name: "Dr. Rafael",
+    videoId: "xDK42rroFYE",
     headline: "TRIPLICOU O NÚMERO DE PACIENTES EM 3 MESES",
     description:
       "O Rafael tinha uma clínica parada, sem previsibilidade. Depois de aplicar o método, fechou 14 implantes capilares no primeiro mês.",
@@ -56,17 +57,23 @@ const TestimonialsSection = () => {
                   transition={{ delay: i * 0.1 }}
                   className="rounded-2xl border border-border bg-card overflow-hidden flex flex-col h-full"
                 >
-                  {/* Video placeholder */}
-                  <div className="relative aspect-video bg-secondary flex items-center justify-center">
-                    <div className="w-14 h-14 rounded-full bg-brand-electric/20 border-2 border-brand-electric flex items-center justify-center">
-                      <Play className="w-6 h-6 text-electric fill-electric ml-0.5" />
-                    </div>
-                    <div className="absolute top-3 left-3 flex items-center gap-2 bg-surface/80 backdrop-blur-sm rounded-full px-3 py-1">
-                      <div className="w-6 h-6 rounded-full bg-brand-electric/30" />
-                      <span className="text-xs text-muted-foreground truncate max-w-[120px]">
-                        Depoimento {item.name}
-                      </span>
-                    </div>
+                  {/* Video */}
+                  <div className="relative aspect-video bg-secondary">
+                    {item.videoId ? (
+                      <iframe
+                        className="w-full h-full"
+                        src={`https://www.youtube.com/embed/${item.videoId}`}
+                        title={`Depoimento ${item.name}`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <div className="w-14 h-14 rounded-full bg-brand-electric/20 border-2 border-brand-electric flex items-center justify-center">
+                          <Play className="w-6 h-6 text-electric fill-electric ml-0.5" />
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   {/* Content */}

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Check, Calendar, Clock, Video, Users, TrendingUp, ShieldCheck, Flame } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Check, TrendingUp, ShieldCheck, Users } from "lucide-react";
 
 const included = [
   "Workshop completo ao vivo (9h às 18h) com construção prática",
@@ -14,26 +13,6 @@ const included = [
 ];
 
 const OfferSection = () => {
-  // Countdown timer to event date (June 15, 2026 9:00 AM BRT)
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-
-  useEffect(() => {
-    const target = new Date("2026-06-15T12:00:00Z").getTime();
-    const tick = () => {
-      const now = Date.now();
-      const diff = Math.max(0, target - now);
-      setTimeLeft({
-        days: Math.floor(diff / 86400000),
-        hours: Math.floor((diff % 86400000) / 3600000),
-        minutes: Math.floor((diff % 3600000) / 60000),
-        seconds: Math.floor((diff % 60000) / 1000),
-      });
-    };
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
-
   return (
     <section className="bg-deep" id="oferta">
       <div className="section-divider" />
@@ -75,42 +54,9 @@ const OfferSection = () => {
           <div className="gradient-electric p-5 text-center relative">
             <p className="text-xs uppercase tracking-[0.2em] mb-1 opacity-80">Workshop</p>
             <p className="font-handwritten text-3xl">Clínica Capilar Lucrativa</p>
-            {/* Scarcity badge — Loss Aversion */}
-            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2">
-              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-background border border-brand-alert/40 text-alert">
-                <Flame className="w-3 h-3" /> Últimas vagas
-              </span>
-            </div>
           </div>
 
-          <div className="p-6 pt-8 space-y-5">
-            {/* Countdown — Urgency Principle */}
-            <div className="grid grid-cols-4 gap-2 text-center">
-              {[
-                { val: timeLeft.days, label: "dias" },
-                { val: timeLeft.hours, label: "horas" },
-                { val: timeLeft.minutes, label: "min" },
-                { val: timeLeft.seconds, label: "seg" },
-              ].map((unit) => (
-                <div key={unit.label} className="bg-background/50 rounded-lg py-2 border border-border">
-                  <p className="text-xl md:text-2xl font-black text-electric tabular-nums">{String(unit.val).padStart(2, "0")}</p>
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{unit.label}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Event info */}
-            <div className="flex items-center justify-center gap-2 text-xs flex-nowrap">
-              <span className="info-badge whitespace-nowrap">
-                <Calendar className="w-3 h-3 text-electric" /> 15/06
-              </span>
-              <span className="info-badge whitespace-nowrap">
-                <Clock className="w-3 h-3 text-electric" /> 9h — 18h
-              </span>
-              <span className="info-badge whitespace-nowrap">
-                <Video className="w-3 h-3 text-electric" /> Ao vivo
-              </span>
-            </div>
+          <div className="p-6 space-y-5">
 
             {/* Price — Anchoring Effect */}
             <div className="text-center space-y-1">

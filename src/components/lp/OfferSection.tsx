@@ -104,28 +104,20 @@ const OfferSection = () => {
         >
           <h4 className="text-center font-semibold text-sm underline">Além de bônus exclusivos:</h4>
 
-          <div className="space-y-3">
-            <div className="flex justify-between items-center">
-              <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-electric" />
-                <span className="text-sm text-foreground">Script de Atendimento para Secretárias</span>
+          <div className="space-y-2">
+            {[
+              { name: "Script de Atendimento para Secretárias", price: "R$ 97" },
+              { name: "Checklist de Conversão de Leads", price: "R$ 97" },
+              { name: "Estrutura de Funil para Clínicas", price: "R$ 103" },
+            ].map((bonus, i) => (
+              <div key={i} className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2 min-w-0">
+                  <Check className="w-4 h-4 text-electric flex-shrink-0" />
+                  <span className="text-sm text-foreground">{bonus.name}</span>
+                </div>
+                <span className="text-alert font-bold text-sm line-through flex-shrink-0">{bonus.price}</span>
               </div>
-              <span className="text-alert font-bold text-sm line-through">R$ 97</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-electric" />
-                <span className="text-sm text-foreground">Checklist de Conversão de Leads</span>
-              </div>
-              <span className="text-alert font-bold text-sm line-through">R$ 97</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-electric" />
-                <span className="text-sm text-foreground">Estrutura de Funil para Clínicas</span>
-              </div>
-              <span className="text-alert font-bold text-sm line-through">R$ 103</span>
-            </div>
+            ))}
           </div>
         </motion.div>
       </div>

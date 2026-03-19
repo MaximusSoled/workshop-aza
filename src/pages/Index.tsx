@@ -1,39 +1,44 @@
+import { lazy, Suspense } from "react";
 import { ArrowUp } from "lucide-react";
 import HeroSection from "@/components/lp/HeroSection";
-import QualificationFilter from "@/components/lp/QualificationFilter";
-import BeliefRupture from "@/components/lp/BeliefRupture";
-import BehaviorMirror from "@/components/lp/BehaviorMirror";
-import PainDiagnosis from "@/components/lp/PainDiagnosis";
-import UniqueMethod from "@/components/lp/UniqueMethod";
-import SpecialistStory from "@/components/lp/SpecialistStory";
-import NarrativeUrgency from "@/components/lp/NarrativeUrgency";
-import HowItWorks from "@/components/lp/HowItWorks";
-import EventSchedule from "@/components/lp/EventSchedule";
-import OfferSection from "@/components/lp/OfferSection";
-import TestimonialsSection from "@/components/lp/TestimonialsSection";
-import AuthoritySection from "@/components/lp/AuthoritySection";
-import FaqSection from "@/components/lp/FaqSection";
-import FloatingCTA from "@/components/lp/FloatingCTA";
+
+// Lazy load below-fold sections for faster initial paint
+const QualificationFilter = lazy(() => import("@/components/lp/QualificationFilter"));
+const BeliefRupture = lazy(() => import("@/components/lp/BeliefRupture"));
+const BehaviorMirror = lazy(() => import("@/components/lp/BehaviorMirror"));
+const PainDiagnosis = lazy(() => import("@/components/lp/PainDiagnosis"));
+const UniqueMethod = lazy(() => import("@/components/lp/UniqueMethod"));
+const SpecialistStory = lazy(() => import("@/components/lp/SpecialistStory"));
+const NarrativeUrgency = lazy(() => import("@/components/lp/NarrativeUrgency"));
+const HowItWorks = lazy(() => import("@/components/lp/HowItWorks"));
+const EventSchedule = lazy(() => import("@/components/lp/EventSchedule"));
+const OfferSection = lazy(() => import("@/components/lp/OfferSection"));
+const TestimonialsSection = lazy(() => import("@/components/lp/TestimonialsSection"));
+const AuthoritySection = lazy(() => import("@/components/lp/AuthoritySection"));
+const FaqSection = lazy(() => import("@/components/lp/FaqSection"));
+const FloatingCTA = lazy(() => import("@/components/lp/FloatingCTA"));
 
 const Index = () => {
   return (
     <main className="overflow-x-hidden scroll-smooth">
       <HeroSection />
-      <QualificationFilter />
-      <BeliefRupture />
-      <BehaviorMirror />
-      <PainDiagnosis />
-      <UniqueMethod />
-      <SpecialistStory />
-      <NarrativeUrgency />
-      <HowItWorks />
-      <EventSchedule />
-      <OfferSection />
-      <TestimonialsSection />
-      <AuthoritySection />
-      <FaqSection />
+      <Suspense fallback={null}>
+        <QualificationFilter />
+        <BeliefRupture />
+        <BehaviorMirror />
+        <PainDiagnosis />
+        <UniqueMethod />
+        <SpecialistStory />
+        <NarrativeUrgency />
+        <HowItWorks />
+        <EventSchedule />
+        <OfferSection />
+        <TestimonialsSection />
+        <AuthoritySection />
+        <FaqSection />
 
-      <FloatingCTA />
+        <FloatingCTA />
+      </Suspense>
 
       {/* Footer */}
       <footer className="bg-midnight border-t border-border py-8">

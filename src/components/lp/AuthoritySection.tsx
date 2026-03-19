@@ -26,7 +26,7 @@ const AuthoritySection = () => {
         >
           <div className="relative inline-block mb-6">
             <div className="w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden mx-auto border-4 border-brand-electric/30 glow-electric">
-              <img src={hiagoPhoto} alt="Hiago Lemos" className="w-full h-full object-cover" />
+              <img src={hiagoPhoto} alt="Hiago Lemos" className="w-full h-full object-cover" loading="lazy" />
             </div>
             {/* Decorative elements */}
             <div className="absolute -top-2 -right-2 w-6 h-6 text-electric animate-float">✦</div>

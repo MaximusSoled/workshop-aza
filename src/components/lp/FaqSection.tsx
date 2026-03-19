@@ -19,11 +19,7 @@ const faqs = [
   },
   {
     q: "Vai ser ao vivo ou gravado?",
-    a: "100% ao vivo. Não haverá gravação disponível. Este é um evento com interação direta e orientação personalizada.",
-  },
-  {
-    q: "O workshop será gravado?",
-    a: "Não. A gravação não estará disponível. Recomendo fortemente que reorganize sua agenda para participar ao vivo.",
+    a: "100% ao vivo. Não haverá gravação disponível. Recomendo fortemente que reorganize sua agenda para participar. Este é um evento com interação direta e orientação personalizada.",
   },
   {
     q: "Qual a data e horário?",

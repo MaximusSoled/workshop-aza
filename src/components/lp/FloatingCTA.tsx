@@ -26,8 +26,9 @@ const FloatingCTA = () => {
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="fixed bottom-0 left-0 right-0 z-50 pointer-events-none"
         >
-          {/* Smoke/blur backdrop */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/50 to-transparent backdrop-blur-md" />
+          {/* Smoke/blur backdrop - layered gradient that fades out above the button */}
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background/70 via-background/30 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-24 backdrop-blur-sm [mask-image:linear-gradient(to_top,black_60%,transparent)]" />
 
           {/* CTA content */}
           <div className="relative pointer-events-auto px-5 pb-5 pt-8 max-w-md mx-auto">

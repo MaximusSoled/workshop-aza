@@ -123,7 +123,7 @@ const UniqueMethod = () => {
         >
           <p className="text-xl font-extrabold">
             ENTÃO CHEGA DE{" "}
-            <span className="font-handwritten text-alert text-3xl strike-through">TROCAR DE AGÊNCIA</span>{" "}
+            <span className="font-handwritten text-alert text-3xl strike-through">RECEBER LEADS DESQUALIFICADOS</span>{" "}
             E{" "}
             <span className="font-handwritten text-alert text-3xl strike-through">CULPAR O TRÁFEGO</span>
           </p>

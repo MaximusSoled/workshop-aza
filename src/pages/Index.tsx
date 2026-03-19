@@ -1,5 +1,6 @@
 import { ArrowUp } from "lucide-react";
 import HeroSection from "@/components/lp/HeroSection";
+import QualificationFilter from "@/components/lp/QualificationFilter";
 import BeliefRupture from "@/components/lp/BeliefRupture";
 import BehaviorMirror from "@/components/lp/BehaviorMirror";
 import PainDiagnosis from "@/components/lp/PainDiagnosis";
@@ -17,6 +18,7 @@ const Index = () => {
   return (
     <main className="overflow-x-hidden">
       <HeroSection />
+      <QualificationFilter />
       <BeliefRupture />
       <BehaviorMirror />
       <PainDiagnosis />

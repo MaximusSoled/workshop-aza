@@ -64,11 +64,11 @@ const OfferSection = () => {
                 Valor total dos entregáveis: <span className="line-through text-alert font-semibold">R$ 997</span>
               </p>
               <p className="text-xs uppercase tracking-widest text-muted-foreground">por apenas</p>
-              <p className="text-5xl md:text-6xl font-black text-electric">
-                R$ 59<span className="text-3xl">,90</span>
+              <p className="text-4xl md:text-5xl font-black text-electric">
+                3x <span className="text-5xl md:text-6xl">R$ 19<span className="text-3xl">,97</span></span>
               </p>
-              <p className="text-xs text-muted-foreground">
-                ou <strong className="text-foreground">3x de R$ 19,97</strong> sem juros
+              <p className="text-sm text-muted-foreground font-medium">
+                ou <strong className="text-foreground">R$ 59,90</strong> à vista
               </p>
             </div>
 

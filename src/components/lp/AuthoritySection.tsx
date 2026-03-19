@@ -48,26 +48,26 @@ const AuthoritySection = () => {
           viewport={{ once: true }}
           className="max-w-lg mx-auto space-y-4"
         >
-          <p className="font-handwritten text-xl md:text-2xl text-muted-foreground leading-relaxed text-center">
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center">
             Eu passei anos fazendo o que todo mundo mandava: investindo mais, trocando de agência,
             seguindo "fórmula mágica". E flopando.
           </p>
-          <p className="font-handwritten text-xl md:text-2xl text-muted-foreground leading-relaxed text-center">
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center">
             Até entender que o problema não era falta de esforço, era falta de método.
           </p>
-          <p className="font-handwritten text-xl md:text-2xl text-muted-foreground leading-relaxed text-center">
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center">
             Mergulhei em comportamento do paciente estético. Estudei o que realmente faz
             uma clínica capilar crescer de forma previsível. E então criei o{" "}
-            <span className="text-electric">Método R.U.M.O.</span>
+            <span className="text-electric font-semibold">Método R.U.M.O.</span>
           </p>
-          <p className="font-handwritten text-xl md:text-2xl text-muted-foreground leading-relaxed text-center">
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center">
             Apliquei com dezenas de clínicas — e os resultados foram{" "}
-            <span className="text-electric">consistentes</span>.
+            <span className="text-electric font-semibold">consistentes</span>.
           </p>
-          <p className="font-handwritten text-xl md:text-2xl text-foreground leading-relaxed text-center font-semibold">
+          <p className="text-sm md:text-base text-foreground leading-relaxed text-center font-semibold">
             Sem hack, sem trend, sem fórmula mágica. Só sistema certo, com execução certa.
           </p>
-          <p className="font-handwritten text-lg text-muted-foreground text-center italic">
+          <p className="text-sm md:text-base text-muted-foreground text-center italic">
             É isso que eu ensino. E é isso que você vai aprender no workshop.
           </p>
         </motion.div>

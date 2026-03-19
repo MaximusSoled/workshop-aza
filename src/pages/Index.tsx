@@ -39,7 +39,7 @@ const Index = () => {
         <FaqSection />
 
         <FloatingCTA />
-      </Suspense>
+        <CookieConsent />
 
       {/* Footer */}
       <footer className="bg-midnight border-t border-border py-8">

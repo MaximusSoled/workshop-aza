@@ -6,6 +6,7 @@ import PainDiagnosis from "@/components/lp/PainDiagnosis";
 import UniqueMethod from "@/components/lp/UniqueMethod";
 import SpecialistStory from "@/components/lp/SpecialistStory";
 import NarrativeUrgency from "@/components/lp/NarrativeUrgency";
+import HowItWorks from "@/components/lp/HowItWorks";
 import EventSchedule from "@/components/lp/EventSchedule";
 import OfferSection from "@/components/lp/OfferSection";
 import AuthoritySection from "@/components/lp/AuthoritySection";
@@ -21,6 +22,7 @@ const Index = () => {
       <UniqueMethod />
       <SpecialistStory />
       <NarrativeUrgency />
+      <HowItWorks />
       <EventSchedule />
       <OfferSection />
       <AuthoritySection />

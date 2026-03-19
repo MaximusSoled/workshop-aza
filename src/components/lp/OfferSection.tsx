@@ -100,14 +100,14 @@ const OfferSection = () => {
             </div>
 
             {/* Event info */}
-            <div className="flex flex-wrap justify-center gap-3 text-xs">
-              <span className="info-badge">
-                <Calendar className="w-3 h-3 text-electric" /> 15/06, às 9h
+            <div className="flex items-center justify-center gap-2 text-xs flex-nowrap">
+              <span className="info-badge whitespace-nowrap">
+                <Calendar className="w-3 h-3 text-electric" /> 15/06
               </span>
-              <span className="info-badge">
+              <span className="info-badge whitespace-nowrap">
                 <Clock className="w-3 h-3 text-electric" /> 9h — 18h
               </span>
-              <span className="info-badge">
+              <span className="info-badge whitespace-nowrap">
                 <Video className="w-3 h-3 text-electric" /> Ao vivo
               </span>
             </div>

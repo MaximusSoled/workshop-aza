@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { ArrowUp } from "lucide-react";
+import CookieConsent from "@/components/CookieConsent";
 import HeroSection from "@/components/lp/HeroSection";
 
 // Lazy load below-fold sections for faster initial paint

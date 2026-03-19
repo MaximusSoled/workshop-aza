@@ -26,6 +26,18 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="space-y-6"
         >
+          {/* Info badges */}
+          <div className="flex flex-wrap justify-center gap-2">
+            <span className="info-badge text-xs !py-1 !px-2.5">
+              <Video className="w-3 h-3 text-electric" />
+              Ao vivo
+            </span>
+            <span className="info-badge text-xs !py-1 !px-2.5">
+              <Calendar className="w-3 h-3 text-electric" />
+              15/06, às 9h
+            </span>
+          </div>
+
           {/* Headline */}
           <div className="space-y-1">
             <p className="text-base md:text-lg font-bold text-muted-foreground">
@@ -47,18 +59,6 @@ const HeroSection = () => {
             para aplicar na sua clínica.{" "}
             <strong className="text-foreground">Clique e garanta sua vaga.</strong>
           </p>
-
-          {/* Info badges */}
-          <div className="flex flex-wrap justify-center gap-3">
-            <span className="info-badge">
-              <Video className="w-3.5 h-3.5 text-electric" />
-              Ao vivo
-            </span>
-            <span className="info-badge">
-              <Calendar className="w-3.5 h-3.5 text-electric" />
-              15/06, às 9h
-            </span>
-          </div>
 
           {/* CTA Button with price */}
           <motion.div

@@ -43,8 +43,8 @@ const HeroSection = () => {
             a minha orientação ao vivo, vou te entregar o{" "}
             <strong className="text-foreground">Método R.U.M.O.</strong> e você vai sair com um{" "}
             <span className="marker-highlight font-semibold text-foreground">plano de ação pronto</span>{" "}
-            para aplicar na segunda-feira.{" "}
-            <strong className="text-foreground">Faça sua inscrição.</strong>
+            para aplicar na sua clínica.{" "}
+            <strong className="text-foreground">Clique e garanta sua vaga.</strong>
           </p>
 
           {/* Info badges */}

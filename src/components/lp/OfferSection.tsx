@@ -119,6 +119,24 @@ const OfferSection = () => {
               </div>
             ))}
           </div>
+
+          {/* CTA de fechamento */}
+          <div className="pt-4 border-t border-brand-electric/20 space-y-3">
+            <p className="text-center text-xs text-muted-foreground">
+              Tudo isso <span className="text-electric font-bold">incluso</span> no seu ingresso
+            </p>
+            <Button
+              variant="cta"
+              size="lg"
+              className="w-full py-5 text-base"
+              onClick={() => window.open("#", "_blank")}
+            >
+              Garantir meu ingresso agora →
+            </Button>
+            <p className="text-[11px] text-center text-muted-foreground">
+              🔒 Vagas limitadas · Pagamento seguro
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>

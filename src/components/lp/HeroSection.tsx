@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import heroBanner from "@/assets/hero-banner.png";
-import { Calendar, Video } from "lucide-react";
+import { Calendar, Video, ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -15,7 +15,6 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7 }}
         />
-        {/* Gradient fade into page background */}
         <div className="absolute bottom-0 left-0 right-0 h-32 md:h-48 bg-gradient-to-t from-background to-transparent" />
       </div>
 
@@ -60,15 +59,42 @@ const HeroSection = () => {
             </span>
           </div>
 
-          {/* Price bar */}
+          {/* CTA Button with price */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="text-xs text-muted-foreground"
+            className="max-w-md mx-auto space-y-3"
           >
-            100% dos ingressos vendidos a{" "}
-            <span className="text-electric font-bold text-sm">R$ 59,90</span>
+            <button
+              onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
+              className="hero-cta-btn group w-full"
+            >
+              <span className="flex items-center gap-2 text-lg font-bold tracking-wide">
+                Quero Participar
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </span>
+              <span className="hero-cta-price">
+                <span className="text-[10px] uppercase tracking-wider opacity-80 leading-none">Por apenas:</span>
+                <span className="text-2xl font-black leading-none">R$59,90</span>
+              </span>
+            </button>
+
+            {/* Progress bar */}
+            <div className="space-y-1.5">
+              <div className="h-1.5 rounded-full overflow-hidden bg-border/50">
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: "20%" }}
+                  transition={{ delay: 1, duration: 1.2, ease: "easeOut" }}
+                  className="h-full rounded-full gradient-electric"
+                />
+              </div>
+              <p className="text-xs text-muted-foreground">
+                <span className="text-electric font-semibold">20%</span> dos ingressos vendidos a{" "}
+                <span className="text-foreground font-semibold">R$ 49,00</span>
+              </p>
+            </div>
           </motion.div>
         </motion.div>
       </div>

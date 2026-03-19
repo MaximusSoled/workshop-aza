@@ -4,30 +4,32 @@ import { Calendar, Video } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background">
-      {/* Banner image */}
-      <div className="relative z-10 w-full max-w-3xl mx-auto px-4 pt-8 md:pt-12">
+    <section className="relative min-h-screen flex flex-col overflow-hidden bg-background">
+      {/* Banner - full bleed, fades into background */}
+      <div className="relative w-full">
         <motion.img
           src={heroBanner}
           alt="Workshop Clínica Capilar Lucrativa - Hiago Lemos"
-          className="w-full h-auto rounded-xl"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          className="w-full h-auto block"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.7 }}
         />
+        {/* Gradient fade into page background */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 md:h-48 bg-gradient-to-t from-background to-transparent" />
       </div>
 
-      {/* Content below banner */}
-      <div className="relative z-10 section-container text-center">
+      {/* Content overlapping banner fade */}
+      <div className="relative z-10 -mt-16 md:-mt-24 max-w-2xl mx-auto px-5 sm:px-6 pb-16 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="space-y-8"
+          className="space-y-6"
         >
           {/* Headline */}
-          <div className="space-y-2">
-            <p className="text-lg md:text-xl font-bold text-muted-foreground">
+          <div className="space-y-1">
+            <p className="text-base md:text-lg font-bold text-muted-foreground">
               Especialista em implante capilar,
             </p>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight">
@@ -37,7 +39,7 @@ const HeroSection = () => {
           </div>
 
           {/* Subheadline */}
-          <p className="text-base md:text-lg max-w-lg mx-auto leading-relaxed text-muted-foreground">
+          <p className="text-sm md:text-base max-w-lg mx-auto leading-relaxed text-muted-foreground">
             Vamos construir seu <strong className="text-foreground">sistema de conversão</strong> com
             a minha orientação ao vivo, vou te entregar o{" "}
             <strong className="text-foreground">Método R.U.M.O.</strong> e você vai sair com um{" "}

@@ -19,7 +19,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content overlapping banner fade */}
-      <div className="relative z-10 -mt-10 md:-mt-16 max-w-2xl mx-auto px-5 sm:px-6 pb-16 pt-12 md:pt-16 text-center">
+      <div className="relative z-10 -mt-10 md:-mt-16 max-w-2xl mx-auto px-5 sm:px-6 pb-6 pt-12 md:pt-16 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

@@ -76,7 +76,7 @@ const HeroSection = () => {
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </span>
               <span className="hero-cta-price">
-                <span className="text-[10px] uppercase tracking-wider opacity-80 leading-none">Por apenas:</span>
+                <span className="text-[10px] uppercase tracking-wider leading-none"><span className="text-alert line-through opacity-80">De R$1.197</span> Por apenas:</span>
                 <span className="text-2xl font-black leading-none">R$59,90</span>
                 <span className="text-[10px] uppercase tracking-wider opacity-70 leading-none mt-0.5">Lote 1</span>
               </span>

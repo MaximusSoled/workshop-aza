@@ -43,10 +43,11 @@ const FloatingCTA = () => {
                 <span className="hero-cta-price">
                   <span className="text-[10px] uppercase tracking-wider opacity-80 leading-none">Por apenas:</span>
                   <span className="text-2xl font-black leading-none">R$59,90</span>
+                  <span className="text-[10px] uppercase tracking-wider opacity-70 leading-none mt-0.5">Lote 1</span>
                 </span>
               </button>
               <div className="flex items-center gap-2">
-                <div className="h-1.5 rounded-full overflow-hidden bg-border/50 flex-1">
+                <div className="h-2.5 rounded-full overflow-hidden bg-border/50 flex-1">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: "20%" }}

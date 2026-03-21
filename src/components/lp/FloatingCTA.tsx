@@ -41,9 +41,11 @@ const FloatingCTA = () => {
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </span>
                 <span className="hero-cta-price">
-                  <span className="text-[10px] uppercase tracking-wider leading-none"><span className="text-alert line-through opacity-80">De R$1.197</span> Por apenas:</span>
+                  <span className="text-[11px] tracking-wider leading-none opacity-70">
+                    <span className="text-alert line-through">R$1.197</span>
+                  </span>
                   <span className="text-2xl font-black leading-none">R$59,90</span>
-                  <span className="text-[10px] uppercase tracking-wider opacity-70 leading-none mt-0.5">Lote 1</span>
+                  <span className="text-[10px] uppercase tracking-wider opacity-60 leading-none">Lote 1</span>
                 </span>
               </button>
               <div className="flex items-center gap-2">

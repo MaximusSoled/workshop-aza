@@ -4,7 +4,7 @@ import { Calendar, Video, ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden bg-background">
+    <section className="relative flex flex-col overflow-hidden bg-background">
       {/* Banner - full bleed, fades into background */}
       <div className="relative w-full">
         <motion.img

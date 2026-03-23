@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import {
@@ -30,6 +31,43 @@ const testimonials = [
   },
 ];
 
+const LazyYouTube = ({ videoId, title }: { videoId: string; title: string }) => {
+  const [loaded, setLoaded] = useState(false);
+  const thumbUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+
+  if (!loaded) {
+    return (
+      <button
+        onClick={() => setLoaded(true)}
+        className="w-full h-full relative cursor-pointer group"
+        aria-label={`Reproduzir ${title}`}
+      >
+        <img
+          src={thumbUrl}
+          alt={title}
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-background/30 group-hover:bg-background/10 transition-colors flex items-center justify-center">
+          <div className="w-14 h-14 rounded-full bg-brand-electric/90 border-2 border-white/30 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+            <Play className="w-6 h-6 text-white fill-white ml-0.5" />
+          </div>
+        </div>
+      </button>
+    );
+  }
+
+  return (
+    <iframe
+      className="w-full h-full"
+      src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+      title={title}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+  );
+};
+
 const TestimonialsSection = () => {
   return (
     <section className="bg-midnight">
@@ -60,14 +98,7 @@ const TestimonialsSection = () => {
                   {/* Video */}
                   <div className="relative aspect-video bg-secondary">
                     {item.videoId ? (
-                      <iframe
-                        className="w-full h-full"
-                        src={`https://www.youtube.com/embed/${item.videoId}`}
-                        title={`Depoimento ${item.name}`}
-                        loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
+                      <LazyYouTube videoId={item.videoId} title={`Depoimento ${item.name}`} />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">
                         <div className="w-14 h-14 rounded-full bg-brand-electric/20 border-2 border-brand-electric flex items-center justify-center">
@@ -93,18 +124,6 @@ const TestimonialsSection = () => {
           <CarouselPrevious className="border-border bg-surface text-foreground hover:bg-card -left-4 md:-left-12" />
           <CarouselNext className="border-border bg-surface text-foreground hover:bg-card -right-4 md:-right-12" />
         </Carousel>
-
-        {/* Dots indicator */}
-        <div className="flex justify-center gap-2">
-          {testimonials.map((_, i) => (
-            <div
-              key={i}
-              className={`w-2 h-2 rounded-full ${
-                i === 0 ? "bg-brand-electric" : "bg-border"
-              }`}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );

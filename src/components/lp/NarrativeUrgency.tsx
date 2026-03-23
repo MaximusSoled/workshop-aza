@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 
 const benefits = [
@@ -41,18 +40,6 @@ const NarrativeUrgency = () => {
           </p>
         </motion.div>
 
-        {/* CTA */}
-        <div className="text-center">
-          <Button
-            variant="cta"
-            size="lg"
-            className="px-10 py-6"
-            onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
-          >
-            Garantir agora o meu ingresso
-          </Button>
-        </div>
-
         {/* Benefits checklist */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -84,18 +71,6 @@ const NarrativeUrgency = () => {
             ))}
           </div>
         </motion.div>
-
-        {/* CTA */}
-        <div className="text-center">
-          <Button
-            variant="cta"
-            size="lg"
-            className="px-10 py-6"
-            onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
-          >
-            Garantir meu ingresso
-          </Button>
-        </div>
       </div>
     </section>
   );

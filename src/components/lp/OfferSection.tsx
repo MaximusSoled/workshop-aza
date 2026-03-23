@@ -26,7 +26,7 @@ const OfferSection = () => {
           </h2>
         </div>
 
-        {/* Social proof bar — Bandwagon Effect */}
+        {/* Social proof bar */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,11 +57,10 @@ const OfferSection = () => {
           </div>
 
           <div className="p-6 space-y-5">
-
-            {/* Price — Anchoring Effect */}
+            {/* Price */}
             <div className="text-center space-y-1">
               <p className="text-xs text-muted-foreground">
-                Valor total dos entregáveis: <span className="line-through text-alert font-semibold">R$ 997</span>
+                De <span className="line-through text-alert font-semibold">R$ 397</span>
               </p>
               <p className="text-xs uppercase tracking-widest text-muted-foreground">por apenas</p>
               <p className="text-4xl md:text-5xl font-black text-electric">
@@ -82,7 +81,7 @@ const OfferSection = () => {
               Garantir meu ingresso →
             </Button>
 
-            {/* Trust signals — Authority + Risk Reversal */}
+            {/* Trust signals */}
             <div className="flex items-center justify-center gap-4 text-[11px] text-muted-foreground">
               <span className="flex items-center gap-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-electric" /> Compra segura
@@ -91,7 +90,7 @@ const OfferSection = () => {
               <span>Cartão, Pix ou Boleto</span>
             </div>
 
-            {/* Micro-commitment — Endowment Effect */}
+            {/* Micro-commitment */}
             <div className="rounded-lg bg-background/30 border border-border p-3 text-center">
               <p className="text-xs text-muted-foreground">
                 <TrendingUp className="w-3 h-3 text-electric inline mr-1" />
@@ -143,10 +142,10 @@ const OfferSection = () => {
             ))}
           </div>
 
-          {/* Value stacking summary — Anchoring */}
+          {/* Value stacking summary */}
           <div className="pt-3 border-t border-brand-electric/20 text-center space-y-1">
             <p className="text-xs text-muted-foreground">
-              Valor total: <span className="line-through text-alert">R$ 1.294</span>
+              Valor total: <span className="line-through text-alert">R$ 694</span>
             </p>
             <p className="text-sm font-bold text-foreground">
               Hoje por apenas <span className="text-electric text-lg font-black">R$ 59,90</span>

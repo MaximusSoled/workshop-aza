@@ -7,7 +7,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-
 const faqs = [
   {
     q: "Esse workshop serve pra qualquer um?",
@@ -65,7 +64,7 @@ const FaqSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center space-y-4 pt-6"
+          className="text-center space-y-4 pt-4"
         >
           <p className="text-lg text-foreground font-semibold">
             Pronto para sair do{" "}

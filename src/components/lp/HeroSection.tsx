@@ -81,27 +81,39 @@ const HeroSection = () => {
               </span>
             </button>
 
-            {/* Progress bar */}
-            <div className="space-y-1">
-              <div className="flex items-center gap-2">
-                <div className="h-2.5 rounded-full overflow-hidden bg-border/50 flex-1">
+            {/* Pricing + Progress bar */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9 }}
+              className="bg-surface/80 backdrop-blur-sm rounded-xl border border-border/50 p-4 space-y-3"
+            >
+              <p className="text-center text-base font-bold text-foreground">
+                De <span className="line-through text-destructive opacity-80">R$397</span>{" "}
+                por <span className="text-electric text-xl font-black">R$59,90</span>
+              </p>
+              <div className="space-y-1.5">
+                <p className="text-center text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
+                  63% dos ingressos vendidos
+                </p>
+                <div className="relative h-5 rounded-full overflow-hidden bg-border/40">
                   <motion.div
                     initial={{ width: 0 }}
-                    animate={{ width: "20%" }}
-                    transition={{ delay: 1, duration: 1.2, ease: "easeOut" }}
+                    animate={{ width: "63%" }}
+                    transition={{ delay: 1.2, duration: 1.5, ease: "easeOut" }}
                     className="h-full rounded-full gradient-electric"
                   />
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 2.5 }}
+                    className="absolute inset-0 flex items-center justify-center text-[11px] font-bold text-white drop-shadow-sm"
+                  >
+                    63%
+                  </motion.span>
                 </div>
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 2 }}
-                  className="text-xs font-bold text-electric min-w-[28px] text-right"
-                >
-                  20%
-                </motion.span>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

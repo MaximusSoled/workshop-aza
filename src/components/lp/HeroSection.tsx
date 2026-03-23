@@ -65,31 +65,14 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="max-w-sm mx-auto space-y-4"
+            className="max-w-sm mx-auto"
           >
-            {/* CTA Button */}
-            <button
-              onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
-              className="hero-cta-btn group w-full !py-3 !px-5"
-            >
-              <span className="flex items-center gap-2 text-base font-bold tracking-wide uppercase whitespace-nowrap">
-                Comprar Ingresso
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </span>
-              <span className="hero-cta-lote whitespace-nowrap">
-                Lote 01
-              </span>
-            </button>
-
-            {/* Pricing + Progress Card */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1 }}
+              transition={{ delay: 0.9 }}
               className="rounded-2xl overflow-hidden border border-border/60"
-              style={{
-                background: "linear-gradient(145deg, hsl(220 45% 13%), hsl(220 50% 10%))",
-              }}
+              style={{ background: "linear-gradient(145deg, hsl(220 45% 13%), hsl(220 50% 10%))" }}
             >
               {/* Price row */}
               <div className="px-5 py-3.5 flex items-center justify-center gap-3">
@@ -103,7 +86,7 @@ const HeroSection = () => {
               </div>
 
               {/* Progress section */}
-              <div className="px-5 pb-4 space-y-2">
+              <div className="px-5 space-y-2">
                 <p className="text-center text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
                   Ingressos vendidos
                 </p>
@@ -127,6 +110,22 @@ const HeroSection = () => {
                     63%
                   </motion.span>
                 </div>
+              </div>
+
+              {/* CTA Button inside card */}
+              <div className="px-4 pt-3 pb-4">
+                <button
+                  onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
+                  className="hero-cta-btn group w-full !py-3 !px-5 !rounded-xl"
+                >
+                  <span className="flex items-center gap-2 text-base font-bold tracking-wide uppercase whitespace-nowrap">
+                    Comprar Ingresso
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                  <span className="hero-cta-lote whitespace-nowrap">
+                    Lote 01
+                  </span>
+                </button>
               </div>
             </motion.div>
           </motion.div>

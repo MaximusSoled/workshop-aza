@@ -48,7 +48,7 @@ const OfferSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-md mx-auto bg-surface rounded-2xl border border-brand-electric/30 overflow-hidden glow-electric-strong"
+          className="max-w-md mx-auto bg-surface rounded-2xl border border-brand-electric/30 overflow-hidden glow-electric-strong bubble-electric p-0"
         >
           {/* Card header */}
           <div className="gradient-electric p-5 text-center relative">
@@ -68,6 +68,47 @@ const OfferSection = () => {
               </p>
               <p className="text-sm text-muted-foreground font-medium">
                 ou <strong className="text-foreground">R$ 59,90</strong> à vista
+              </p>
+            </div>
+
+            {/* What's included */}
+            <div className="space-y-2">
+              {included.map((item, i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-electric flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-foreground">{item}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Bonuses */}
+            <div className="pt-3 border-t border-brand-electric/20 space-y-3">
+              <h4 className="text-center font-semibold text-sm underline">Além de bônus exclusivos:</h4>
+
+              <div className="space-y-2">
+                {[
+                  { name: "Script de Atendimento para Secretárias", price: "R$ 97" },
+                  { name: "Checklist de Conversão de Leads", price: "R$ 97" },
+                  { name: "Estrutura de Funil para Clínicas", price: "R$ 103" },
+                ].map((bonus, i) => (
+                  <div key={i} className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <Check className="w-4 h-4 text-electric flex-shrink-0" />
+                      <span className="text-sm text-foreground">{bonus.name}</span>
+                    </div>
+                    <span className="text-alert font-bold text-sm line-through flex-shrink-0">{bonus.price}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Value stacking summary */}
+            <div className="pt-3 border-t border-brand-electric/20 text-center space-y-1">
+              <p className="text-xs text-muted-foreground">
+                Valor total: <span className="line-through text-alert">R$ 694</span>
+              </p>
+              <p className="text-sm font-bold text-foreground">
+                Hoje por apenas <span className="text-electric text-lg font-black">R$ 59,90</span>
               </p>
             </div>
 
@@ -97,77 +138,6 @@ const OfferSection = () => {
                 <strong className="text-foreground">93%</strong> dos participantes aplicaram o método já na primeira semana
               </p>
             </div>
-          </div>
-        </motion.div>
-
-        {/* What's included */}
-        <div className="max-w-md mx-auto space-y-3">
-          {included.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="check-item"
-            >
-              <Check className="w-4 h-4 text-electric flex-shrink-0 mt-0.5" />
-              <span className="text-sm text-foreground">{item}</span>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Bonuses */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="max-w-md mx-auto bubble-electric p-6 space-y-4"
-        >
-          <h4 className="text-center font-semibold text-sm underline">Além de bônus exclusivos:</h4>
-
-          <div className="space-y-2">
-            {[
-              { name: "Script de Atendimento para Secretárias", price: "R$ 97" },
-              { name: "Checklist de Conversão de Leads", price: "R$ 97" },
-              { name: "Estrutura de Funil para Clínicas", price: "R$ 103" },
-            ].map((bonus, i) => (
-              <div key={i} className="flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2 min-w-0">
-                  <Check className="w-4 h-4 text-electric flex-shrink-0" />
-                  <span className="text-sm text-foreground">{bonus.name}</span>
-                </div>
-                <span className="text-alert font-bold text-sm line-through flex-shrink-0">{bonus.price}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Value stacking summary */}
-          <div className="pt-3 border-t border-brand-electric/20 text-center space-y-1">
-            <p className="text-xs text-muted-foreground">
-              Valor total: <span className="line-through text-alert">R$ 694</span>
-            </p>
-            <p className="text-sm font-bold text-foreground">
-              Hoje por apenas <span className="text-electric text-lg font-black">R$ 59,90</span>
-            </p>
-          </div>
-
-          {/* CTA de fechamento */}
-          <div className="pt-3 border-t border-brand-electric/20 space-y-3">
-            <p className="text-center text-xs text-muted-foreground">
-              Tudo isso <span className="text-electric font-bold">incluso</span> no seu ingresso
-            </p>
-            <Button
-              variant="cta"
-              size="lg"
-              className="w-full py-5 text-base"
-              onClick={() => window.open("#", "_blank")}
-            >
-              Garantir meu ingresso agora →
-            </Button>
-            <p className="text-[11px] text-center text-muted-foreground">
-              🔒 Vagas limitadas · Pagamento seguro
-            </p>
           </div>
         </motion.div>
       </div>

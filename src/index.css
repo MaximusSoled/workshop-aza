@@ -83,11 +83,13 @@
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--brand-surface)) hsl(var(--brand-deep));
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {

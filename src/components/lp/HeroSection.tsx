@@ -72,12 +72,11 @@ const HeroSection = () => {
               className="hero-cta-btn group w-full"
             >
               <span className="flex items-center gap-2 text-lg font-bold tracking-wide">
-                Quero Participar
+                Comprar Ingresso
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </span>
-              <span className="hero-cta-price">
-                <span className="text-[10px] uppercase tracking-wider opacity-80 leading-none">Por apenas:</span>
-                <span className="text-2xl font-black leading-none">R$59,90</span>
+              <span className="bg-background/20 backdrop-blur-sm rounded-full px-4 py-1 text-[11px] uppercase tracking-[0.15em] font-black text-electric border border-electric/30">
+                Lote 01
               </span>
             </button>
 

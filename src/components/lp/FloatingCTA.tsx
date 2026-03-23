@@ -38,7 +38,7 @@ const FloatingCTA = () => {
               >
                 <div className="flex items-center justify-center gap-2 text-xs px-4 py-2.5">
                   <span className="text-muted-foreground font-medium">
-                    De <span className="line-through text-destructive font-bold">R$397</span>
+                    De <span className="line-through text-destructive font-bold">R$997</span>
                   </span>
                   <span className="w-px h-4 bg-border/50" />
                   <span className="text-foreground font-black text-sm">

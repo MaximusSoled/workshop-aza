@@ -70,13 +70,13 @@ const HeroSection = () => {
             {/* CTA Button */}
             <button
               onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
-              className="hero-cta-btn group w-full"
+              className="hero-cta-btn group w-full !py-3 !px-5"
             >
-              <span className="flex items-center gap-2 text-lg font-bold tracking-wide uppercase">
+              <span className="flex items-center gap-2 text-base font-bold tracking-wide uppercase whitespace-nowrap">
                 Comprar Ingresso
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </span>
-              <span className="hero-cta-lote">
+              <span className="hero-cta-lote whitespace-nowrap">
                 Lote 01
               </span>
             </button>

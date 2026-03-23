@@ -10,7 +10,7 @@ const HeroSection = () => {
         <motion.img
           src={heroBanner}
           alt="Workshop Clínica Capilar Lucrativa - Hiago Lemos"
-          className="w-full h-auto block"
+          className="mx-auto block h-auto w-full"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7 }}
@@ -19,15 +19,15 @@ const HeroSection = () => {
       </div>
 
       {/* Content overlapping banner fade */}
-      <div className="relative z-10 -mt-10 md:-mt-16 max-w-2xl mx-auto px-5 sm:px-6 pb-6 pt-12 md:pt-16 text-center">
+      <div className="relative z-10 -mt-10 md:-mt-16 mx-auto w-full max-w-2xl px-4 sm:px-6 pb-6 pt-12 md:pt-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="space-y-6"
+          className="flex flex-col items-center space-y-6 text-center"
         >
           {/* Info badges */}
-          <div className="flex flex-wrap justify-center gap-2">
+          <div className="flex max-w-max flex-wrap justify-center gap-2">
             <span className="info-badge text-xs !py-1 !px-2.5">
               <Video className="w-3 h-3 text-electric" />
               Ao vivo
@@ -39,11 +39,11 @@ const HeroSection = () => {
           </div>
 
           {/* Headline */}
-          <div className="space-y-1">
+          <div className="mx-auto max-w-[21rem] space-y-2 sm:max-w-xl">
             <p className="text-base md:text-lg font-bold text-muted-foreground">
               Especialista em implante capilar,
             </p>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight [text-wrap:balance]">
               Vou te mostrar o exato sistema que aplico para{" "}
               <span className="marker-highlight">CONVERTER</span> os leads da sua agenda em{" "}
               <span className="marker-highlight">VENDAS</span>
@@ -51,7 +51,7 @@ const HeroSection = () => {
           </div>
 
           {/* Subheadline */}
-          <p className="text-sm md:text-base max-w-lg mx-auto leading-relaxed text-muted-foreground">
+          <p className="mx-auto max-w-[20.75rem] text-sm leading-relaxed text-muted-foreground sm:max-w-lg md:text-base [text-wrap:pretty]">
             <strong className="text-foreground">Ao vivo</strong> vamos construir seu{" "}
             <strong className="text-foreground">sistema de conversão</strong> utilizando o{" "}
             <strong className="text-foreground">Método R.U.M.O.</strong> você vai sair com um{" "}
@@ -65,7 +65,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="max-w-sm mx-auto"
+            className="mx-auto w-full max-w-[21.5rem] sm:max-w-sm"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}

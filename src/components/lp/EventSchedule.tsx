@@ -2,14 +2,10 @@ import { motion } from "framer-motion";
 import { Clock, Calendar, Video, Lock } from "lucide-react";
 
 const schedule = [
-  { time: "09:00", title: "Abertura e Diagnóstico" },
-  { time: "10:00", title: "Módulo R — Receber leads qualificados" },
-  { time: "11:30", title: "Módulo U — Humanizar o atendimento" },
-  { time: "13:00", title: "Almoço & Networking" },
-  { time: "14:00", title: "Módulo M — Monetizar os contatos" },
-  { time: "15:30", title: "Módulo O — Otimizar o fechamento" },
-  { time: "17:00", title: "Plano de Ação Personalizado" },
-  { time: "18:00", title: "Encerramento" },
+  { time: "8h30", title: "Início" },
+  { time: "12h", title: "Almoço" },
+  { time: "13h30", title: "Retorno" },
+  { time: "18h", title: "Encerramento" },
 ];
 
 const EventSchedule = () => {

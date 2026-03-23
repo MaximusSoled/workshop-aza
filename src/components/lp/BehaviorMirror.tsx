@@ -17,7 +17,8 @@ const extraActions = [
 const BehaviorMirror = () => {
   return (
     <section className="bg-deep">
-      <div className="section-container">
+      <div className="section-divider" />
+      <div className="section-container space-y-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -29,7 +30,7 @@ const BehaviorMirror = () => {
             E você <span className="font-handwritten text-electric text-4xl md:text-5xl">obedeceu...</span>
           </h2>
 
-          {/* Action cards - stacked like screenshots */}
+          {/* Action cards */}
           <div className="space-y-4 max-w-sm mx-auto">
             {actions.map((action, i) => (
               <motion.div
@@ -49,7 +50,7 @@ const BehaviorMirror = () => {
           </div>
 
           {/* Extra emotional escalation */}
-          <div className="space-y-3 pt-4">
+          <div className="space-y-3">
             {extraActions.map((text, i) => (
               <motion.p
                 key={i}

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { Users, TrendingUp, Zap } from "lucide-react";
 
 const methodSteps = [
@@ -19,7 +18,7 @@ const UniqueMethod = () => {
   return (
     <section className="bg-deep">
       <div className="section-divider" />
-      <div className="section-container space-y-12">
+      <div className="section-container space-y-10">
         {/* Intro */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -61,7 +60,7 @@ const UniqueMethod = () => {
           </h3>
         </div>
 
-        {/* Result badges - cascading */}
+        {/* Result badges */}
         <div className="max-w-xs mx-auto space-y-3">
           {results.map((r, i) => (
             <motion.div
@@ -119,7 +118,7 @@ const UniqueMethod = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center space-y-4 pt-4"
+          className="text-center space-y-4"
         >
           <p className="text-xl font-extrabold">
             ENTÃO CHEGA DE{" "}
@@ -133,18 +132,6 @@ const UniqueMethod = () => {
             <span className="font-handwritten text-electric text-xl">mensagem certa, com o sistema certo.</span>
           </p>
         </motion.div>
-
-        {/* CTA */}
-        <div className="text-center">
-          <Button
-            variant="cta"
-            size="lg"
-            className="px-10 py-6"
-            onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
-          >
-            Garantir agora o meu ingresso
-          </Button>
-        </div>
       </div>
     </section>
   );

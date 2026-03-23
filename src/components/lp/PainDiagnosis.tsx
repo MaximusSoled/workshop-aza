@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 
 const cycleSteps = [
   "Investe em anúncios",
@@ -14,7 +13,7 @@ const PainDiagnosis = () => {
   return (
     <section className="bg-midnight">
       <div className="section-divider" />
-      <div className="section-container space-y-12">
+      <div className="section-container space-y-10">
         {/* Result question */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -104,18 +103,6 @@ const PainDiagnosis = () => {
             entre as duas coisas.
           </p>
         </motion.div>
-
-        {/* CTA */}
-        <div className="text-center">
-          <Button
-            variant="cta"
-            size="lg"
-            className="px-10 py-6"
-            onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
-          >
-            Adquirir ingresso agora
-          </Button>
-        </div>
       </div>
     </section>
   );

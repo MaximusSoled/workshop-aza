@@ -65,13 +65,13 @@ const FloatingCTA = () => {
                 <div className="px-3 pt-2 pb-3">
                   <button
                     onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
-                    className="hero-cta-btn group w-full !py-2.5 !px-4 !rounded-lg"
+                    className="hero-cta-btn group w-full !py-2.5 !px-4 !rounded-lg !flex-col !gap-1.5 sm:!flex-row sm:!gap-3"
                   >
-                    <span className="flex items-center gap-2 text-sm font-bold tracking-wide uppercase whitespace-nowrap">
+                    <span className="flex items-center gap-2 text-xs sm:text-sm font-bold tracking-wide uppercase">
                       Comprar Ingresso
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </span>
-                    <span className="hero-cta-lote text-[9px] px-2 py-0.5 whitespace-nowrap">
+                    <span className="hero-cta-lote text-[9px] px-2 py-0.5">
                       Lote 01
                     </span>
                   </button>

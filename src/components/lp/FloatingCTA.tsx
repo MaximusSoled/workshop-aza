@@ -45,16 +45,22 @@ const FloatingCTA = () => {
                   <span className="text-2xl font-black leading-none">R$59,90</span>
                 </span>
               </button>
-              <div className="flex items-center gap-2">
-                <div className="h-2.5 rounded-full overflow-hidden bg-border/50 flex-1">
+              <div className="bg-surface/80 backdrop-blur-sm rounded-lg border border-border/50 p-2.5 space-y-1.5">
+                <p className="text-center text-xs font-bold text-foreground">
+                  De <span className="line-through text-destructive opacity-80">R$397</span>{" "}
+                  por <span className="text-electric text-sm font-black">R$59,90</span>
+                </p>
+                <div className="relative h-3.5 rounded-full overflow-hidden bg-border/40">
                   <motion.div
                     initial={{ width: 0 }}
-                    animate={{ width: "20%" }}
+                    animate={{ width: "63%" }}
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="h-full rounded-full gradient-electric"
                   />
+                  <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold text-white drop-shadow-sm">
+                    63%
+                  </span>
                 </div>
-                <span className="text-xs font-bold text-electric min-w-[28px] text-right">20%</span>
               </div>
             </div>
         </motion.div>

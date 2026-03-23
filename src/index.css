@@ -286,6 +286,14 @@
     @apply flex flex-col items-end text-primary-foreground;
   }
 
+  .hero-cta-lote {
+    @apply rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.18em] font-black;
+    color: hsl(var(--brand-electric));
+    background: hsl(228 100% 59% / 0.15);
+    border: 1px solid hsl(228 100% 59% / 0.35);
+    text-shadow: 0 0 12px hsl(228 100% 59% / 0.6);
+  }
+
   @keyframes cta-shimmer {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }

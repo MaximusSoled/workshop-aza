@@ -60,7 +60,7 @@ const OfferSection = () => {
             {/* Price */}
             <div className="text-center space-y-1">
               <p className="text-xs text-muted-foreground">
-                De <span className="line-through text-alert font-semibold">R$ 397</span>
+                De <span className="line-through text-alert font-semibold">R$ 997</span>
               </p>
               <p className="text-xs uppercase tracking-widest text-muted-foreground">por apenas</p>
               <p className="text-4xl md:text-5xl font-black text-electric">

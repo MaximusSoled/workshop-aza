@@ -77,7 +77,7 @@ const HeroSection = () => {
               {/* Price row */}
               <div className="px-5 py-3.5 flex items-center justify-center gap-3">
                 <span className="text-sm text-muted-foreground font-medium">
-                  De <span className="line-through text-destructive font-bold">R$397</span>
+                  De <span className="line-through text-destructive font-bold">R$997</span>
                 </span>
                 <span className="w-px h-5 bg-border/60" />
                 <span className="text-foreground font-black text-xl tracking-tight">

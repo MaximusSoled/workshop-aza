@@ -70,7 +70,7 @@ const LazyYouTube = ({ videoId, title }: { videoId: string; title: string }) => 
 
 const TestimonialsSection = () => {
   return (
-    <section className="bg-midnight">
+    <section className="bg-midnight overflow-x-clip">
       <div className="section-divider" />
       <div className="section-container space-y-10">
         <motion.h2
@@ -84,10 +84,10 @@ const TestimonialsSection = () => {
           também estará aqui:
         </motion.h2>
 
-        <Carousel opts={{ align: "start", loop: true }} className="w-full max-w-2xl mx-auto">
-          <CarouselContent className="-ml-3">
+        <Carousel opts={{ align: "start", loop: true }} className="w-full max-w-2xl mx-auto overflow-hidden">
+          <CarouselContent className="ml-0">
             {testimonials.map((item, i) => (
-              <CarouselItem key={i} className="pl-3 basis-[85%] md:basis-1/2">
+              <CarouselItem key={i} className="basis-[88%] pl-0 pr-3 sm:basis-[82%] md:basis-1/2 md:pr-4">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -121,8 +121,8 @@ const TestimonialsSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="border-border bg-surface text-foreground hover:bg-card -left-4 md:-left-12" />
-          <CarouselNext className="border-border bg-surface text-foreground hover:bg-card -right-4 md:-right-12" />
+          <CarouselPrevious className="hidden md:flex border-border bg-surface text-foreground hover:bg-card md:-left-12" />
+          <CarouselNext className="hidden md:flex border-border bg-surface text-foreground hover:bg-card md:-right-12" />
         </Carousel>
       </div>
     </section>

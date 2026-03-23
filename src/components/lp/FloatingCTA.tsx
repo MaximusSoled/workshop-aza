@@ -31,32 +31,44 @@ const FloatingCTA = () => {
           <div className="absolute inset-x-0 bottom-0 h-24 backdrop-blur-sm [mask-image:linear-gradient(to_top,black_60%,transparent)]" />
 
           {/* CTA content */}
-            <div className="relative pointer-events-auto px-5 pb-4 pt-7 max-w-md mx-auto space-y-1.5">
+            <div className="relative pointer-events-auto px-5 pb-4 pt-7 max-w-sm mx-auto space-y-2">
               <button
                 onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
                 className="hero-cta-btn group w-full !py-3 !px-5"
               >
-                <span className="flex items-center gap-2 text-base font-bold tracking-wide">
+                <span className="flex items-center gap-2 text-base font-bold tracking-wide uppercase">
                   Comprar Ingresso
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </span>
-                <span className="bg-background/20 backdrop-blur-sm rounded-full px-3 py-0.5 text-[10px] uppercase tracking-[0.15em] font-black text-electric border border-electric/30">
+                <span className="hero-cta-lote text-[9px] px-2.5 py-0.5">
                   Lote 01
                 </span>
               </button>
-              <div className="bg-surface/80 backdrop-blur-sm rounded-lg border border-border/50 p-2.5 space-y-1.5">
-                <p className="text-center text-xs font-bold text-foreground">
-                  De <span className="line-through text-destructive opacity-80">R$397</span>{" "}
-                  por <span className="text-electric text-sm font-black">R$59,90</span>
-                </p>
-                <div className="relative h-3.5 rounded-full overflow-hidden bg-border/40">
+              <div
+                className="rounded-xl overflow-hidden border border-border/50 p-3 space-y-2"
+                style={{ background: "linear-gradient(145deg, hsl(220 45% 13%), hsl(220 50% 10%))" }}
+              >
+                <div className="flex items-center justify-center gap-2 text-xs">
+                  <span className="text-muted-foreground font-medium">
+                    De <span className="line-through text-destructive font-bold">R$397</span>
+                  </span>
+                  <span className="w-px h-4 bg-border/50" />
+                  <span className="text-foreground font-black text-sm">
+                    por <span className="text-electric text-base">R$59,90</span>
+                  </span>
+                </div>
+                <div className="relative h-4 rounded-full overflow-hidden" style={{ background: "hsl(220 30% 15%)" }}>
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: "63%" }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                    className="h-full rounded-full gradient-electric"
+                    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                    className="h-full rounded-full"
+                    style={{
+                      background: "linear-gradient(90deg, hsl(228 100% 50%), hsl(228 100% 65%), hsl(228 100% 59%))",
+                      boxShadow: "0 0 15px hsl(228 100% 59% / 0.4), inset 0 1px 0 hsl(0 0% 100% / 0.12)",
+                    }}
                   />
-                  <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold text-white drop-shadow-sm">
+                  <span className="absolute inset-0 flex items-center justify-center text-[10px] font-black text-white drop-shadow-md">
                     63%
                   </span>
                 </div>

@@ -60,53 +60,69 @@ const HeroSection = () => {
             <strong className="text-foreground">Clique e garanta sua vaga.</strong>
           </p>
 
-          {/* CTA Button with price */}
+          {/* CTA Block */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="max-w-md mx-auto space-y-3"
+            className="max-w-sm mx-auto space-y-4"
           >
+            {/* CTA Button */}
             <button
               onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
               className="hero-cta-btn group w-full"
             >
-              <span className="flex items-center gap-2 text-lg font-bold tracking-wide">
+              <span className="flex items-center gap-2 text-lg font-bold tracking-wide uppercase">
                 Comprar Ingresso
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </span>
-              <span className="bg-background/20 backdrop-blur-sm rounded-full px-4 py-1 text-[11px] uppercase tracking-[0.15em] font-black text-electric border border-electric/30">
+              <span className="hero-cta-lote">
                 Lote 01
               </span>
             </button>
 
-            {/* Pricing + Progress bar */}
+            {/* Pricing + Progress Card */}
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 }}
-              className="bg-surface/80 backdrop-blur-sm rounded-xl border border-border/50 p-4 space-y-3"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1 }}
+              className="rounded-2xl overflow-hidden border border-border/60"
+              style={{
+                background: "linear-gradient(145deg, hsl(220 45% 13%), hsl(220 50% 10%))",
+              }}
             >
-              <p className="text-center text-base font-bold text-foreground">
-                De <span className="line-through text-destructive opacity-80">R$397</span>{" "}
-                por <span className="text-electric text-xl font-black">R$59,90</span>
-              </p>
-              <div className="space-y-1.5">
-                <p className="text-center text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
-                  63% dos ingressos vendidos
+              {/* Price row */}
+              <div className="px-5 py-3.5 flex items-center justify-center gap-3">
+                <span className="text-sm text-muted-foreground font-medium">
+                  De <span className="line-through text-destructive font-bold">R$397</span>
+                </span>
+                <span className="w-px h-5 bg-border/60" />
+                <span className="text-foreground font-black text-xl tracking-tight">
+                  por <span className="text-electric text-2xl">R$59,90</span>
+                </span>
+              </div>
+
+              {/* Progress section */}
+              <div className="px-5 pb-4 space-y-2">
+                <p className="text-center text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+                  Ingressos vendidos
                 </p>
-                <div className="relative h-5 rounded-full overflow-hidden bg-border/40">
+                <div className="relative h-6 rounded-full overflow-hidden" style={{ background: "hsl(220 30% 15%)" }}>
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: "63%" }}
-                    transition={{ delay: 1.2, duration: 1.5, ease: "easeOut" }}
-                    className="h-full rounded-full gradient-electric"
+                    transition={{ delay: 1.4, duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+                    className="h-full rounded-full relative"
+                    style={{
+                      background: "linear-gradient(90deg, hsl(228 100% 50%), hsl(228 100% 65%), hsl(228 100% 59%))",
+                      boxShadow: "0 0 20px hsl(228 100% 59% / 0.5), inset 0 1px 0 hsl(0 0% 100% / 0.15)",
+                    }}
                   />
                   <motion.span
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 2.5 }}
-                    className="absolute inset-0 flex items-center justify-center text-[11px] font-bold text-white drop-shadow-sm"
+                    transition={{ delay: 3 }}
+                    className="absolute inset-0 flex items-center justify-center text-xs font-black text-white drop-shadow-md"
                   >
                     63%
                   </motion.span>

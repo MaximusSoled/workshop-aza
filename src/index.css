@@ -259,7 +259,7 @@
 
   /* Hero CTA button */
   .hero-cta-btn {
-    @apply relative flex items-center justify-between gap-4 px-6 py-4 rounded-xl font-bold text-primary-foreground cursor-pointer transition-all;
+    @apply relative flex items-center justify-center gap-3 px-5 py-4 rounded-xl font-bold text-primary-foreground cursor-pointer transition-all;
     background: linear-gradient(135deg, hsl(228 100% 59%), hsl(228 100% 70%), hsl(228 100% 55%));
     background-size: 200% 200%;
     animation: cta-shimmer 3s ease-in-out infinite;
@@ -289,11 +289,11 @@
   }
 
   .hero-cta-lote {
-    @apply rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.18em] font-black;
-    color: hsl(var(--brand-electric));
-    background: hsl(228 100% 59% / 0.15);
-    border: 1px solid hsl(228 100% 59% / 0.35);
-    text-shadow: 0 0 12px hsl(228 100% 59% / 0.6);
+    @apply rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.18em] font-black shrink-0;
+    color: hsl(0 0% 100%);
+    background: hsl(0 0% 100% / 0.18);
+    border: 1px solid hsl(0 0% 100% / 0.35);
+    backdrop-filter: blur(4px);
   }
 
   @keyframes cta-shimmer {

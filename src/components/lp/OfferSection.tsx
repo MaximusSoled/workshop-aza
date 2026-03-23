@@ -105,7 +105,7 @@ const OfferSection = () => {
             {/* Value stacking summary */}
             <div className="pt-3 border-t border-brand-electric/20 text-center space-y-1">
               <p className="text-xs text-muted-foreground">
-                Valor total: <span className="line-through text-alert">R$ 694</span>
+              Valor total: <span className="line-through text-alert">R$ 1.294</span>
               </p>
               <p className="text-sm font-bold text-foreground">
                 Hoje por apenas <span className="text-electric text-lg font-black">R$ 59,90</span>

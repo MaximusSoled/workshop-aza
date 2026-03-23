@@ -80,6 +80,7 @@
   }
 
   html {
+    scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--brand-surface)) hsl(var(--brand-deep));
   }

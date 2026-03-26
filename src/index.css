@@ -92,6 +92,38 @@
     overflow-x: hidden;
   }
 
+  /* Mobile performance: reduce animations & add containment */
+  @media (max-width: 767px) {
+    section {
+      contain: layout style paint;
+    }
+
+    /* Kill expensive box-shadows on mobile */
+    .glow-electric,
+    .glow-electric-strong {
+      box-shadow: 0 0 15px hsl(228 100% 59% / 0.15) !important;
+    }
+
+    /* Reduce animation durations globally */
+    *, *::before, *::after {
+      animation-duration: 0.3s !important;
+      transition-duration: 0.2s !important;
+    }
+
+    /* Disable smooth scroll for faster navigation feel */
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
   }

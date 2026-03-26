@@ -115,15 +115,11 @@ const HeroSection = () => {
               <div className="px-4 pt-3 pb-4">
                 <button
                   onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
-                  className="hero-cta-btn group w-full !py-3 !px-5 !rounded-xl"
+                  className="hero-cta-btn group w-full !py-3 !px-5 !rounded-xl flex-row flex-nowrap whitespace-nowrap"
                 >
-                   <span className="flex items-center gap-2 text-sm font-bold tracking-wide uppercase">
-                     Garantir minha vaga
-                     <ArrowRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-1" />
-                   </span>
-                  <span className="hero-cta-lote">
-                    Lote 01
-                  </span>
+                  <span className="text-sm font-bold tracking-wide uppercase">Garantir minha vaga</span>
+                  <span className="hero-cta-lote text-[10px]">Lote 01</span>
+                  <ArrowRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-1" />
                 </button>
               </div>
             </motion.div>

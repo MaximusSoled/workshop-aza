@@ -132,13 +132,8 @@ const OfferSection = () => {
               <span>Cartão, Pix ou Boleto</span>
             </div>
 
-            {/* Micro-commitment */}
-            <div className="rounded-lg bg-background/30 border border-border p-3 text-center">
-              <p className="text-xs text-muted-foreground">
-                <TrendingUp className="w-3 h-3 text-electric inline mr-1" />
-                <strong className="text-foreground">93%</strong> dos participantes aplicaram o método já na primeira semana
-              </p>
-            </div>
+            {/* Depoimentos em carrossel */}
+            <OfferTestimonials />
           </div>
         </motion.div>
       </div>

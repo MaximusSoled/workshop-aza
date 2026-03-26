@@ -81,7 +81,7 @@ const FaqSection = () => {
             className="py-6 px-10 text-base"
             onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
           >
-            Garantir meu ingresso agora →
+            Garantir minha vaga agora →
           </Button>
 
           <p className="text-xs text-muted-foreground">

@@ -13,7 +13,8 @@ const AuthoritySection = () => {
           className="text-center"
         >
           <h2 className="text-2xl md:text-3xl font-bold">
-            Mas quem sou eu para te ensinar?
+            Quem está por trás do{" "}
+            <span className="font-handwritten text-electric text-3xl md:text-4xl">Método R.U.M.O.</span>
           </h2>
         </motion.div>
 
@@ -37,7 +38,7 @@ const AuthoritySection = () => {
             Hiago Lemos
           </p>
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            Hair Implant Growth Strategist
+            Estrategista de crescimento para clínicas capilares
           </p>
         </motion.div>
 

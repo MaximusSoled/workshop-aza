@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Check, ShieldCheck, Users, Quote } from "lucide-react";
+import { Check, ShieldCheck, Users, Quote, Star } from "lucide-react";
 
 const miniTestimonials = [
   { name: "Dr. Rafael M.", text: "Fechei 14 implantes no primeiro mês aplicando o método. Nunca imaginei resultados tão rápidos." },
@@ -13,43 +13,68 @@ const miniTestimonials = [
 
 const OfferTestimonials = () => {
   const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % miniTestimonials.length);
-    }, 4000);
-    return () => clearInterval(interval);
+  const next = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % miniTestimonials.length);
   }, []);
 
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(next, 5000);
+    return () => clearInterval(interval);
+  }, [isPaused, next]);
+
   return (
-    <div className="rounded-lg bg-background/30 border border-border p-3 overflow-hidden relative min-h-[68px]">
-      <motion.div
-        key={current}
-        initial={{ x: "100%", opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        exit={{ x: "-100%", opacity: 0 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="flex items-start gap-2"
-      >
-        <Quote className="w-3.5 h-3.5 text-electric flex-shrink-0 mt-0.5" />
-        <div>
-          <p className="text-xs text-muted-foreground leading-relaxed italic">"{miniTestimonials[current].text}"</p>
-          <p className="text-[11px] text-electric font-semibold mt-1">{miniTestimonials[current].name}</p>
-        </div>
-      </motion.div>
-      <div className="absolute bottom-1.5 right-3 flex gap-1">
+    <div
+      className="rounded-xl bg-background/20 border border-border/50 p-4 overflow-hidden relative min-h-[90px]"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={() => setIsPaused(true)}
+      onTouchEnd={() => setIsPaused(false)}
+    >
+      {/* Stars */}
+      <div className="flex gap-0.5 mb-2">
+        {[...Array(5)].map((_, i) => (
+          <Star key={i} className="w-3 h-3 text-yellow-400 fill-yellow-400" />
+        ))}
+      </div>
+
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={current}
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -6 }}
+          transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="flex items-start gap-2.5"
+        >
+          <Quote className="w-3.5 h-3.5 text-electric flex-shrink-0 mt-0.5 opacity-60" />
+          <div>
+            <p className="text-xs text-foreground/80 leading-relaxed italic">"{miniTestimonials[current].text}"</p>
+            <p className="text-[11px] text-electric font-semibold mt-1.5">{miniTestimonials[current].name}</p>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Progress dots */}
+      <div className="absolute bottom-2.5 right-3 flex gap-1.5">
         {miniTestimonials.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`w-1 h-1 rounded-full transition-all ${i === current ? "bg-electric w-2.5" : "bg-muted-foreground/30"}`}
+            aria-label={`Depoimento ${i + 1}`}
+            className={`h-1.5 rounded-full transition-all duration-500 ${
+              i === current
+                ? "bg-electric w-4"
+                : "bg-muted-foreground/20 w-1.5 hover:bg-muted-foreground/40"
+            }`}
           />
         ))}
       </div>
     </div>
   );
 };
-
 const included = [
   "Workshop completo ao vivo (9h às 18h) com construção prática",
   "Método R.U.M.O. aplicado ao seu mercado",

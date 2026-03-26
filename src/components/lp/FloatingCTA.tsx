@@ -17,7 +17,7 @@ const FloatingCTA = () => {
   }, []);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {visible && (
         <motion.div
           initial={{ y: 100, opacity: 0 }}

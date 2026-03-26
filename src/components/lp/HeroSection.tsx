@@ -45,7 +45,7 @@ const HeroSection = () => {
             </p>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight [text-wrap:balance]">
               Sua clínica vai{" "}
-              <span className="marker-highlight">fechar mais cirurgias</span> — sem depender de sorte, indicação ou agência
+              <span className="text-electric">fechar mais cirurgias</span> — sem depender de sorte, indicação ou agência
             </h1>
           </div>
 

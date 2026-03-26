@@ -12,7 +12,18 @@ const FloatingCTA = () => {
       ticking = true;
       requestAnimationFrame(() => {
         const threshold = window.innerHeight * 1.5;
-        setVisible(window.scrollY > threshold);
+        const pastThreshold = window.scrollY > threshold;
+
+        // Hide when the offer section is in view
+        const offerEl = document.getElementById("oferta");
+        let inOfferSection = false;
+        if (offerEl) {
+          const rect = offerEl.getBoundingClientRect();
+          // Section is "in view" when its top is above viewport bottom and bottom is below viewport top
+          inOfferSection = rect.top < window.innerHeight && rect.bottom > 0;
+        }
+
+        setVisible(pastThreshold && !inOfferSection);
         ticking = false;
       });
     };

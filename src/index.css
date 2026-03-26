@@ -104,9 +104,8 @@
       box-shadow: 0 0 15px hsl(228 100% 59% / 0.15) !important;
     }
 
-    /* Reduce animation durations globally */
+    /* Reduce transition durations globally (but not animations like shimmer) */
     *, *::before, *::after {
-      animation-duration: 0.3s !important;
       transition-duration: 0.2s !important;
     }
 

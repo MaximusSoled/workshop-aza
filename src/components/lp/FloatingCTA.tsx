@@ -68,13 +68,16 @@ const FloatingCTA = () => {
                     className="hero-cta-btn group w-full !py-2.5 !px-4 !rounded-lg"
                   >
                     <span className="flex items-center gap-2 text-xs font-bold tracking-wide uppercase">
-                      Comprar Ingresso
+                      Garantir minha vaga
                       <ArrowRight className="w-3.5 h-3.5 shrink-0 transition-transform group-hover:translate-x-1" />
                     </span>
                     <span className="hero-cta-lote text-[9px] px-2 py-0.5">
                       Lote 01
                     </span>
                   </button>
+                  <p className="text-center text-[10px] text-muted-foreground mt-1.5 flex items-center justify-center gap-1">
+                    🔒 Pagamento 100% seguro
+                  </p>
                 </div>
               </div>
             </div>

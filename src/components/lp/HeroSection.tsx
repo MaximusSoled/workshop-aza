@@ -44,9 +44,8 @@ const HeroSection = () => {
               Especialista em implante capilar,
             </p>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight [text-wrap:balance]">
-              Vou te mostrar o exato sistema que aplico para{" "}
-              <span className="marker-highlight">CONVERTER</span> os leads da sua agenda em{" "}
-              <span className="marker-highlight">VENDAS</span>
+              Sua clínica vai{" "}
+              <span className="marker-highlight">fechar mais cirurgias</span> — sem depender de sorte, indicação ou agência
             </h1>
           </div>
 
@@ -118,10 +117,10 @@ const HeroSection = () => {
                   onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
                   className="hero-cta-btn group w-full !py-3 !px-5 !rounded-xl"
                 >
-                  <span className="flex items-center gap-2 text-sm font-bold tracking-wide uppercase">
-                    Comprar Ingresso
-                    <ArrowRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-1" />
-                  </span>
+                   <span className="flex items-center gap-2 text-sm font-bold tracking-wide uppercase">
+                     Garantir minha vaga
+                     <ArrowRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-1" />
+                   </span>
                   <span className="hero-cta-lote">
                     Lote 01
                   </span>

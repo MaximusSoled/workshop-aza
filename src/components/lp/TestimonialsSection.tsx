@@ -79,9 +79,9 @@ const TestimonialsSection = () => {
           viewport={{ once: true }}
           className="headline-secondary text-center"
         >
-          Em breve, a{" "}
-          <span className="marker-highlight">sua história de sucesso</span>{" "}
-          também estará aqui:
+          Clínicas que já aplicam o{" "}
+          <span className="marker-highlight">Método R.U.M.O.</span>{" "}
+          e colhem resultados:
         </motion.h2>
 
         <Carousel opts={{ align: "start", loop: true }} className="w-full max-w-2xl mx-auto overflow-hidden">

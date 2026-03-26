@@ -34,9 +34,9 @@ const Index = () => {
         <NarrativeUrgency />
         <HowItWorks />
         <EventSchedule />
-        <OfferSection />
-        <TestimonialsSection />
         <AuthoritySection />
+        <TestimonialsSection />
+        <OfferSection />
         <FaqSection />
 
         <FloatingCTA />

@@ -117,9 +117,9 @@ const OfferSection = () => {
               variant="cta"
               size="lg"
               className="w-full py-6 text-lg"
-              onClick={() => window.open("#", "_blank")}
+              onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
             >
-              Garantir meu ingresso →
+              Garantir minha vaga agora →
             </Button>
 
             {/* Trust signals */}

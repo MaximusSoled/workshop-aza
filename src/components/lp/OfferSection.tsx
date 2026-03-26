@@ -3,6 +3,57 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Check, ShieldCheck, Users, Quote } from "lucide-react";
 
+const miniTestimonials = [
+  { name: "Dr. Rafael M.", text: "Fechei 14 implantes no primeiro mês aplicando o método. Nunca imaginei resultados tão rápidos." },
+  { name: "Dra. Camila S.", text: "Saí de 2 para 11 procedimentos por mês. O problema nunca foi tráfego, era o processo comercial." },
+  { name: "Dr. André L.", text: "Faturei R$ 87 mil em um único mês. Reorganizei a captação e bati o recorde da clínica." },
+  { name: "Dra. Juliana P.", text: "Minha secretária agora converte 3x mais leads em consultas. O script mudou tudo." },
+  { name: "Dr. Marcos R.", text: "Parei de depender de indicação. Hoje tenho fila de espera para cirurgias toda semana." },
+];
+
+const OfferTestimonials = () => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % miniTestimonials.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="rounded-lg bg-background/30 border border-border p-3 overflow-hidden relative min-h-[68px] flex items-center">
+      {miniTestimonials.map((t, i) => (
+        <motion.div
+          key={i}
+          initial={false}
+          animate={{
+            opacity: i === current ? 1 : 0,
+            y: i === current ? 0 : 8,
+          }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className={`${i === current ? "relative" : "absolute inset-0 p-3 pointer-events-none"} flex items-start gap-2`}
+        >
+          <Quote className="w-3.5 h-3.5 text-electric flex-shrink-0 mt-0.5" />
+          <div>
+            <p className="text-xs text-muted-foreground leading-relaxed italic">"{t.text}"</p>
+            <p className="text-[11px] text-electric font-semibold mt-1">{t.name}</p>
+          </div>
+        </motion.div>
+      ))}
+      <div className="absolute bottom-1.5 right-3 flex gap-1">
+        {miniTestimonials.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-1 h-1 rounded-full transition-all ${i === current ? "bg-electric w-2.5" : "bg-muted-foreground/30"}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const included = [
   "Workshop completo ao vivo (9h às 18h) com construção prática",
   "Método R.U.M.O. aplicado ao seu mercado",
@@ -12,6 +63,7 @@ const included = [
   "Como fechar mais cirurgias sem parecer vendedor",
   "Plano de ação pronto para aplicar na segunda-feira",
 ];
+
 
 const OfferSection = () => {
   return (

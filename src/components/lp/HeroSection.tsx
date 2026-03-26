@@ -1,19 +1,26 @@
 import { motion } from "framer-motion";
 import heroBanner from "@/assets/hero-banner.png";
 import { Calendar, Video, ArrowRight } from "lucide-react";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 const HeroSection = () => {
+  const reducedMotion = useReducedMotion();
+  const fadeIn = reducedMotion ? { duration: 0.1 } : { duration: 0.7 };
+  const slideUp = reducedMotion
+    ? { opacity: 1, y: 0 }
+    : { opacity: 0, y: 30 };
+
   return (
     <section className="relative flex flex-col overflow-hidden bg-background">
       {/* Banner - full bleed, fades into background */}
       <div className="relative w-full">
-        <motion.img
+        <img
           src={heroBanner}
           alt="Workshop Clínica Capilar Lucrativa - Hiago Lemos"
           className="mx-auto block h-auto w-full"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7 }}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute bottom-0 left-0 right-0 h-48 md:h-64 bg-gradient-to-t from-background to-transparent" />
       </div>
@@ -21,9 +28,9 @@ const HeroSection = () => {
       {/* Content overlapping banner fade */}
       <div className="relative z-10 -mt-10 md:-mt-16 mx-auto w-full max-w-2xl px-4 sm:px-6 pb-6 pt-12 md:pt-16">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={slideUp}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: reducedMotion ? 0.1 : 0.8, delay: reducedMotion ? 0 : 0.3 }}
           className="flex flex-col items-center space-y-6 text-center"
         >
           {/* Info badges */}

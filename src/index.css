@@ -294,13 +294,18 @@
     @apply relative flex items-center justify-center gap-3 px-5 py-4 rounded-xl font-bold text-primary-foreground cursor-pointer transition-all;
     background: linear-gradient(135deg, hsl(228 100% 59%), hsl(228 100% 70%), hsl(228 100% 55%));
     background-size: 200% 200%;
-    animation: cta-shimmer 3s ease-in-out infinite;
     box-shadow:
       0 0 30px hsl(228 100% 59% / 0.5),
       0 0 60px hsl(228 100% 59% / 0.2),
       0 4px 15px hsl(0 0% 0% / 0.3),
       inset 0 1px 0 hsl(0 0% 100% / 0.15);
     border: 1px solid hsl(228 100% 70% / 0.4);
+  }
+
+  @media (min-width: 768px) {
+    .hero-cta-btn {
+      animation: cta-shimmer 3s ease-in-out infinite;
+    }
   }
 
   .hero-cta-btn:hover {
@@ -325,7 +330,12 @@
     color: hsl(0 0% 100%);
     background: hsl(0 0% 100% / 0.18);
     border: 1px solid hsl(0 0% 100% / 0.35);
-    backdrop-filter: blur(4px);
+  }
+
+  @media (min-width: 768px) {
+    .hero-cta-lote {
+      backdrop-filter: blur(4px);
+    }
   }
 
   @keyframes cta-shimmer {

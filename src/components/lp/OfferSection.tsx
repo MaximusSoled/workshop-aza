@@ -22,25 +22,21 @@ const OfferTestimonials = () => {
   }, []);
 
   return (
-    <div className="rounded-lg bg-background/30 border border-border p-3 overflow-hidden relative min-h-[68px] flex items-center">
-      {miniTestimonials.map((t, i) => (
-        <motion.div
-          key={i}
-          initial={false}
-          animate={{
-            opacity: i === current ? 1 : 0,
-            y: i === current ? 0 : 8,
-          }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-          className={`${i === current ? "relative" : "absolute inset-0 p-3 pointer-events-none"} flex items-start gap-2`}
-        >
-          <Quote className="w-3.5 h-3.5 text-electric flex-shrink-0 mt-0.5" />
-          <div>
-            <p className="text-xs text-muted-foreground leading-relaxed italic">"{t.text}"</p>
-            <p className="text-[11px] text-electric font-semibold mt-1">{t.name}</p>
-          </div>
-        </motion.div>
-      ))}
+    <div className="rounded-lg bg-background/30 border border-border p-3 overflow-hidden relative min-h-[68px]">
+      <motion.div
+        key={current}
+        initial={{ x: "100%", opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        exit={{ x: "-100%", opacity: 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        className="flex items-start gap-2"
+      >
+        <Quote className="w-3.5 h-3.5 text-electric flex-shrink-0 mt-0.5" />
+        <div>
+          <p className="text-xs text-muted-foreground leading-relaxed italic">"{miniTestimonials[current].text}"</p>
+          <p className="text-[11px] text-electric font-semibold mt-1">{miniTestimonials[current].name}</p>
+        </div>
+      </motion.div>
       <div className="absolute bottom-1.5 right-3 flex gap-1">
         {miniTestimonials.map((_, i) => (
           <button

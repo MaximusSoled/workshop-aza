@@ -43,7 +43,7 @@ const HeroSection = () => {
             <p className="text-base md:text-lg font-bold text-muted-foreground">
               Especialista em implante capilar,
             </p>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight [text-wrap:balance]">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight [text-wrap:balance] bg-secondary">
               Sua clínica vai{" "}
               <span className="marker-highlight">fechar mais cirurgias</span> — sem depender de sorte, indicação ou agência
             </h1>

@@ -62,8 +62,7 @@ const HeroSection = () => {
             <strong className="text-foreground">sistema de conversão</strong> utilizando o{" "}
             <strong className="text-foreground">Método R.U.M.O.</strong> você vai sair com um{" "}
             <span className="marker-highlight font-semibold text-foreground">plano de ação pronto</span>{" "}
-            para aplicar na sua clínica.{" "}
-            <strong className="text-foreground">Clique e garanta sua vaga.</strong>
+            para aplicar na sua clínica.
           </p>
 
           {/* CTA Block */}

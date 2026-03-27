@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Check, ShieldCheck, Users, Quote, Star } from "lucide-react";
+import { Check, ShieldCheck, Users, Quote, Star, ArrowRight } from "lucide-react";
 
 const miniTestimonials = [
   { name: "Dr. Rafael M.", text: "Fechei 14 implantes no primeiro mês aplicando o método. Nunca imaginei resultados tão rápidos." },
@@ -180,14 +180,13 @@ const OfferSection = () => {
             </div>
 
             {/* CTA */}
-            <Button
-              variant="cta"
-              size="lg"
-              className="w-full py-6 text-lg"
+            <button
+              className="hero-cta-btn group w-full !py-3.5 !px-5 !rounded-xl"
               onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
             >
-              Garantir minha vaga agora →
-            </Button>
+              <span className="text-sm font-bold tracking-wide uppercase">Garantir minha vaga agora</span>
+              <ArrowRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-1" />
+            </button>
 
             {/* Trust signals */}
             <div className="flex items-center justify-center gap-4 text-[11px] text-muted-foreground">

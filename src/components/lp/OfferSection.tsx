@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Check, ShieldCheck, Users, Quote, Star } from "lucide-react";
+import { Check, ShieldCheck, Users, Quote, Star, ArrowRight } from "lucide-react";
 
 const miniTestimonials = [
   { name: "Dr. Rafael M.", text: "Fechei 14 implantes no primeiro mês aplicando o método. Nunca imaginei resultados tão rápidos." },

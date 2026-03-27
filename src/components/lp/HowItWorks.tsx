@@ -4,19 +4,18 @@ import { Play, Monitor, FileDown } from "lucide-react";
 const items = [
   {
     icon: Play,
-    title: "Aula introdutória gravada:",
-    description: "pra você já começar a aplicar antes mesmo do workshop ao vivo",
+    title: "Aula introdutória gravada",
+    description: "Você já começa a aplicar antes do dia do workshop. Conteúdo que prepara sua clínica para receber e reter leads desde agora.",
   },
   {
     icon: Monitor,
-    title: "Workshop ao vivo de 9h — 100% prático:",
-    description:
-      "conteúdo profundo onde você vai montar o sistema completo para atrair e fechar pacientes de implante capilar",
+    title: "Workshop ao vivo — 9h às 18h — 100% prático",
+    description: "Um dia inteiro construindo seu sistema de conversão. Você sai com o método montado, não apenas explicado.",
   },
   {
     icon: FileDown,
-    title: "Material de apoio:",
-    description: "todos os frameworks, checklists e modelos prontos pra você baixar e aplicar na sua clínica",
+    title: "Material de apoio completo",
+    description: "Scripts prontos, checklists e frameworks para sua secretária aplicar na segunda-feira. Sem precisar lembrar de tudo.",
   },
 ];
 
@@ -44,7 +43,6 @@ const HowItWorks = () => {
               transition={{ delay: i * 0.12 }}
               className="relative rounded-2xl border border-border bg-card overflow-hidden flex flex-col"
             >
-              {/* Decorative dots pattern */}
               <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
                 <div
                   className="w-full h-full"
@@ -56,21 +54,18 @@ const HowItWorks = () => {
                 />
               </div>
 
-              {/* Image placeholder area */}
               <div className="relative mx-4 mt-4 rounded-xl overflow-hidden bg-secondary aspect-[4/3] flex items-center justify-center border border-border/50">
                 <div className="w-16 h-16 rounded-full bg-brand-electric/10 border border-brand-electric/30 flex items-center justify-center">
                   <item.icon className="w-7 h-7 text-brand-electric" />
                 </div>
               </div>
 
-              {/* Icon badge */}
               <div className="flex justify-start px-4 -mt-4 relative z-10">
                 <div className="w-9 h-9 rounded-full bg-brand-electric flex items-center justify-center shadow-lg">
                   <item.icon className="w-4 h-4 text-primary-foreground" />
                 </div>
               </div>
 
-              {/* Text */}
               <div className="px-4 pb-5 pt-3 flex-1">
                 <p className="text-sm md:text-base text-foreground">
                   <strong>{item.title}</strong>{" "}

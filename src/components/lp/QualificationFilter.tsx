@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { Check, X } from "lucide-react";
+import { Check } from "lucide-react";
 
 const qualifications = [
-  "Já possuem estrutura montada",
-  "Já investem (ou já investiram) em marketing",
-  "Já atendem pacientes, mas enfrentam instabilidade na agenda",
-  "Sabem que estão perdendo dinheiro por falta de um sistema previsível",
+  "Já possui estrutura montada",
+  "Já investe (ou investiu) em marketing",
+  "Já atende pacientes, mas enfrenta instabilidade na agenda",
+  "Sabe que está perdendo dinheiro por falta de um sistema de conversão",
 ];
 
 const QualificationFilter = () => {
@@ -20,7 +20,7 @@ const QualificationFilter = () => {
           className="text-center space-y-4"
         >
           <h2 className="text-2xl md:text-3xl font-extrabold">
-            Esse treinamento{" "}
+            Este workshop{" "}
             <span className="font-handwritten text-electric text-3xl md:text-4xl marker-highlight">
               não é para clínicas
             </span>{" "}
@@ -36,25 +36,15 @@ const QualificationFilter = () => {
           className="space-y-4 max-w-lg mx-auto text-base text-muted-foreground"
         >
           <p>
-            Se hoje a sua clínica ainda não fatura de forma consistente, não investe em marketing ou ainda está tentando{" "}
-            <span className="marker-alert text-foreground">"entender como começar"</span>…
+            Se sua clínica ainda não tem estrutura montada,{" "}
+            <span className="marker-alert text-foreground">este não é o lugar certo.</span>
           </p>
-          <p className="font-handwritten text-alert text-2xl md:text-3xl text-center">
-            esse evento não é para você.
+          <p>
+            Aqui eu não vou ensinar como criar uma clínica do zero. Não vou falar sobre primeiros passos, redes sociais ou como atrair o primeiro paciente.
           </p>
-          <p>Aqui, eu não vou ensinar o básico.</p>
-          <p>Eu não vou falar sobre como criar uma clínica ou dar os primeiros passos.</p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.25 }}
-          className="bubble-electric max-w-lg mx-auto text-center"
-        >
-          <p className="text-sm text-muted-foreground mb-1">
-            Esse treinamento foi criado <strong className="text-foreground">exclusivamente</strong> para clínicas de implante capilar que:
+          <p className="text-foreground font-semibold">
+            Este workshop é para quem já tem leads chegando — mas vê esses leads{" "}
+            <span className="font-handwritten text-alert text-2xl md:text-3xl">sumindo sem virar cirurgia.</span>
           </p>
         </motion.div>
 

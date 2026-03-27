@@ -33,7 +33,6 @@ const OfferTestimonials = () => {
       onTouchStart={() => setIsPaused(true)}
       onTouchEnd={() => setIsPaused(false)}
     >
-      {/* Stars */}
       <div className="flex gap-0.5 mb-2">
         {[...Array(5)].map((_, i) => (
           <Star key={i} className="w-3 h-3 text-yellow-400 fill-yellow-400" />
@@ -57,7 +56,6 @@ const OfferTestimonials = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Progress dots */}
       <div className="absolute bottom-2.5 right-3 flex gap-1.5">
         {miniTestimonials.map((_, i) => (
           <button
@@ -75,16 +73,16 @@ const OfferTestimonials = () => {
     </div>
   );
 };
+
 const included = [
-  "Workshop completo ao vivo (9h às 18h) com construção prática",
-  "Método R.U.M.O. aplicado ao seu mercado",
-  "Sistema de atendimento e scripts de conversão",
-  "Estrutura de funil para clínicas capilares",
-  "Diagnóstico de posicionamento + plano de ação",
+  "Workshop completo ao vivo (9h às 18h) — construção prática do seu sistema",
+  "Método R.U.M.O. aplicado ao mercado de implante capilar",
+  "Scripts de atendimento prontos para sua secretária usar amanhã",
+  "Sistema de conversão + estrutura de funil para clínicas capilares",
+  "Diagnóstico de posicionamento + plano de ação personalizado",
   "Como fechar mais cirurgias sem parecer vendedor",
   "Plano de ação pronto para aplicar na segunda-feira",
 ];
-
 
 const OfferSection = () => {
   return (
@@ -131,19 +129,10 @@ const OfferSection = () => {
           </div>
 
           <div className="p-6 space-y-5">
-            {/* Price */}
-            <div className="text-center space-y-1">
-              <p className="text-xs text-muted-foreground">
-                De <span className="line-through text-alert font-semibold">R$ 997</span>
-              </p>
-              <p className="text-xs uppercase tracking-widest text-muted-foreground">por apenas</p>
-              <p className="text-4xl md:text-5xl font-black text-electric">
-                3x <span className="text-5xl md:text-6xl">R$ 19<span className="text-3xl">,97</span></span>
-              </p>
-              <p className="text-sm text-muted-foreground font-medium">
-                ou <strong className="text-foreground">R$ 59,90</strong> à vista
-              </p>
-            </div>
+            {/* Subtitle */}
+            <p className="text-center text-sm text-muted-foreground">
+              Tudo que você precisa para converter o lead que já tem em cirurgia fechada:
+            </p>
 
             {/* What's included */}
             <div className="space-y-2">
@@ -157,13 +146,13 @@ const OfferSection = () => {
 
             {/* Bonuses */}
             <div className="pt-3 border-t border-brand-electric/20 space-y-3">
-              <h4 className="text-center font-semibold text-sm underline">Além de bônus exclusivos:</h4>
+              <h4 className="text-center font-semibold text-sm underline">Bônus exclusivos:</h4>
 
               <div className="space-y-2">
                 {[
                   { name: "Script de Atendimento para Secretárias", price: "R$ 97" },
                   { name: "Checklist de Conversão de Leads", price: "R$ 97" },
-                  { name: "Estrutura de Funil para Clínicas", price: "R$ 103" },
+                  { name: "Estrutura de Funil para Clínicas", price: "R$ 183" },
                 ].map((bonus, i) => (
                   <div key={i} className="flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2 min-w-0">
@@ -176,13 +165,17 @@ const OfferSection = () => {
               </div>
             </div>
 
-            {/* Value stacking summary */}
+            {/* Price */}
             <div className="pt-3 border-t border-brand-electric/20 text-center space-y-1">
               <p className="text-xs text-muted-foreground">
-              Valor total: <span className="line-through text-alert">R$ 1.294</span>
+                Valor total: <span className="line-through text-alert font-semibold">R$ 1.274</span>
               </p>
-              <p className="text-sm font-bold text-foreground">
-                Hoje por apenas <span className="text-electric text-lg font-black">R$ 59,90</span>
+              <p className="text-xs uppercase tracking-widest text-muted-foreground">Hoje por apenas</p>
+              <p className="text-4xl md:text-5xl font-black text-electric">
+                3x <span className="text-5xl md:text-6xl">R$ 19<span className="text-3xl">,97</span></span>
+              </p>
+              <p className="text-sm text-muted-foreground font-medium">
+                ou <strong className="text-foreground">R$ 59,90</strong> à vista
               </p>
             </div>
 

@@ -9,30 +9,34 @@ import {
 
 const faqs = [
   {
-    q: "Esse workshop serve pra qualquer um?",
-    a: "Não. Ele foi desenhado especificamente para médicos que fazem implante capilar e donos de clínicas de transplante capilar que querem parar de depender de indicações e ter um sistema previsível de pacientes.",
+    q: "Se eu não puder assistir ao vivo, perco o conteúdo?",
+    a: "Não. Você recebe acesso à gravação. Mas recomendo fortemente assistir ao vivo — o workshop tem construção prática em tempo real.",
+  },
+  {
+    q: "Funciona para clínica pequena, de 1 ou 2 pessoas?",
+    a: "Especialmente para você. Quanto menor a equipe, mais crítico é ter um sistema de conversão. Sem sistema, você depende de sorte e indicação.",
+  },
+  {
+    q: "Minha secretária vai conseguir aplicar?",
+    a: "Sim. O script de atendimento foi criado para quem não tem experiência em vendas. Ela aplica no mesmo dia que receber.",
+  },
+  {
+    q: "Meu problema é o tráfego, não a conversão. Este workshop serve?",
+    a: "Se seus leads chegam mas não viram cirurgia — o problema não é o tráfego. Este workshop foi feito exatamente para você.",
   },
   {
     q: "Preciso já investir em tráfego pago?",
-    a: "Não necessariamente. O método funciona para quem já investe e também para quem está começando. O foco está em converter, não apenas atrair.",
+    a: "Não. O método funciona com qualquer volume de leads — orgânico ou pago. O que muda é o sistema que você usa para converter.",
   },
   {
-    q: "Vai ser ao vivo ou gravado?",
-    a: "100% ao vivo. Não haverá gravação disponível. Recomendo fortemente que reorganize sua agenda para participar. Este é um evento com interação direta e orientação personalizada.",
-  },
-  {
-    q: "Qual a data e horário?",
-    a: "15 de Junho de 2026, das 9h às 18h (podendo se estender caso os participantes peçam aprofundamento).",
-  },
-  {
-    q: "Serve pra agências e profissionais de marketing?",
-    a: "Se você atende clínicas de implante capilar, sim. O conteúdo vai te dar ferramentas práticas para entregar resultados reais para seus clientes desse nicho.",
+    q: "Serve para agências ou profissionais de marketing?",
+    a: "Não. Este workshop foi construído para donos e gestores de clínicas capilares.",
   },
 ];
 
 const FaqSection = () => {
   return (
-    <section className="bg-deep">
+    <section className="bg-midnight">
       <div className="section-divider" />
       <div className="section-container space-y-10">
         {/* Title */}
@@ -66,13 +70,16 @@ const FaqSection = () => {
           viewport={{ once: true }}
           className="text-center space-y-4 pt-4"
         >
-          <p className="text-lg text-foreground font-semibold">
-            Pronto para sair do{" "}
-            <span className="font-handwritten text-alert text-2xl">ciclo da instabilidade</span>?
+          <p className="text-lg text-foreground font-semibold max-w-md mx-auto">
+            Cada lead que some sem converter é uma cirurgia que{" "}
+            <span className="font-handwritten text-alert text-2xl">ficou na mesa.</span>
           </p>
           <p className="text-sm text-muted-foreground max-w-md mx-auto">
-            Garanta seu ingresso agora e aprenda o sistema que vai transformar sua clínica capilar em uma{" "}
-            <span className="text-electric font-semibold">máquina previsível de conversão</span>.
+            Você tem o tráfego. Você tem a estrutura. O que falta é o sistema que transforma esse lead em paciente.
+          </p>
+          <p className="text-sm text-muted-foreground max-w-md mx-auto">
+            Garanta sua vaga agora e saia do workshop com o sistema montado —{" "}
+            <span className="text-electric font-semibold">pronto para aplicar na semana seguinte.</span>
           </p>
 
           <Button

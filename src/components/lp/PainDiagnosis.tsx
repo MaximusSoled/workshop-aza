@@ -1,106 +1,84 @@
 import { motion } from "framer-motion";
+import { Check } from "lucide-react";
+import { Users, TrendingUp, Zap } from "lucide-react";
 
-const cycleSteps = [
-  "Investe em anúncios",
-  "Leads desqualificados",
-  "Secretária responde mal",
-  "Paciente some",
-  "Culpa o tráfego",
-  "Troca de agência",
+const results = [
+  { icon: Users, text: "Agenda cheia com consistência" },
+  { icon: TrendingUp, text: "Faturamento previsível todo mês" },
+  { icon: Zap, text: "Cirurgias fechadas sem depender de indicação ou sorte" },
 ];
 
 const PainDiagnosis = () => {
   return (
-    <section className="bg-midnight">
+    <section className="bg-deep">
       <div className="section-divider" />
       <div className="section-container space-y-10">
-        {/* Result question */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <span className="inline-block gradient-electric px-6 py-2 rounded-full text-sm font-bold mb-8">
-            E o resultado?
-          </span>
-
-          <div className="space-y-4 text-base md:text-lg text-muted-foreground max-w-lg mx-auto">
-            <p>
-              Às vezes <span className="marker-highlight text-foreground">um mês bom</span>. Algumas consultas.
-              Uma cirurgia que <span className="marker-highlight text-foreground">te dá esperança</span>.
-            </p>
-            <p>
-              Mas no mês seguinte,{" "}
-              <span className="marker-alert text-foreground">volta tudo ao normal</span>.
-              Agenda esvazia. Leads somem.{" "}
-              <span className="font-handwritten text-alert text-2xl">A frustração cresce.</span>
-            </p>
-            <p>
-              E aquele mês bom que ficou,{" "}
-              <strong className="text-foreground">não gerou previsibilidade</strong>,{" "}
-              <strong className="text-foreground">não gerou sistema</strong>,{" "}
-              <span className="marker-alert text-foreground font-bold">não construiu nada</span>.
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Pain name */}
+        {/* Headline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center space-y-3"
+          className="text-center space-y-4"
         >
-          <p className="text-muted-foreground text-sm">Isso tem nome.</p>
-          <h3 className="text-2xl md:text-3xl font-extrabold">
-            Eu chamo de{" "}
-            <span className="font-handwritten text-electric text-4xl md:text-5xl marker-highlight">
-              Ciclo da Clínica Capilar Instável
-            </span>
-          </h3>
-          <p className="text-muted-foreground text-sm mt-2">É um ciclo. E funciona assim:</p>
+          <h2 className="headline-secondary">
+            Você pode fazer parte dos{" "}
+            <span className="font-handwritten text-electric text-4xl md:text-5xl">5%</span>{" "}
+            que fecham{" "}
+            <span className="font-handwritten text-electric text-4xl md:text-5xl">80% das cirurgias</span>
+          </h2>
         </motion.div>
 
-        {/* Cycle diagram */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="relative max-w-md mx-auto"
-        >
-          <div className="grid grid-cols-2 gap-3">
-            {cycleSteps.map((step, i) => (
-              <div key={i} className="cycle-step">
-                <span className="text-electric font-bold mr-1">{i + 1}.</span>
-                {step}
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-4">
-            <span className="font-handwritten text-3xl text-alert">🔄 O ciclo recomeça</span>
-          </div>
-          <p className="text-center text-xs text-muted-foreground mt-3 italic">
-            Cada volta nesse ciclo custa tempo, energia e dinheiro.
-          </p>
-        </motion.div>
-
-        {/* Root cause */}
+        {/* Myth busting */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="bubble-electric max-w-lg mx-auto text-center space-y-3"
         >
+          <p className="text-sm font-semibold text-foreground mb-2">Existe um mito que precisa ser destruído agora:</p>
           <p className="text-muted-foreground">
-            O problema é que <span className="text-foreground font-semibold underline decoration-brand-electric">ninguém te ensinou a converter</span>.
+            O mercado <span className="strike-through">não premia quem tem mais leads</span>.{" "}
+            Não premia quem <span className="strike-through">investe mais em anúncios</span>.{" "}
+            Não premia quem <span className="strike-through">contratou a melhor agência</span>.
           </p>
-          <p className="text-muted-foreground">
-            Te ensinaram a <span className="strike-through">atrair</span>.
-          </p>
-          <p className="font-bold text-lg text-foreground">
-            E tem uma <span className="font-handwritten text-electric text-3xl">diferença brutal</span>{" "}
-            entre as duas coisas.
+        </motion.div>
+
+        {/* Truth */}
+        <div className="text-center space-y-2">
+          <p className="text-muted-foreground">O mercado premia quem sabe</p>
+          <h3 className="text-3xl md:text-4xl font-extrabold">
+            <span className="marker-highlight">converter o lead que já tem.</span>
+          </h3>
+        </div>
+
+        {/* Results */}
+        <div className="space-y-3 max-w-md mx-auto">
+          <p className="text-center text-sm text-muted-foreground mb-4">Quem aprende isso, tem:</p>
+          {results.map((r, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="flex items-start gap-3 bubble"
+            >
+              <Check className="w-4 h-4 text-electric flex-shrink-0 mt-0.5" />
+              <span className="text-sm text-foreground">{r.text}</span>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Closing */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <p className="text-sm text-muted-foreground max-w-md mx-auto">
+            O lead que você jogou fora por falta de sistema —{" "}
+            <strong className="text-foreground">alguém já está convertendo esse lead.</strong>
           </p>
         </motion.div>
       </div>

@@ -2,15 +2,15 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 const benefits = [
-  "Estruturar um sistema de conversão previsível",
-  "Saber exatamente o que responder para cada tipo de lead",
-  "Ter clareza sobre como atrair pacientes certos",
-  "Parar de depender de indicações ou sorte",
+  "Saber exatamente o que responder quando o lead chega — e parar de perder a cirurgia na primeira mensagem",
+  "Montar um sistema de conversão que funciona mesmo quando você não está presente",
+  "Fechar mais cirurgias sem depender de indicação, sorte ou agência nova",
+  "Ter agenda cheia com previsibilidade — não com esperança",
 ];
 
 const NarrativeUrgency = () => {
   return (
-    <section className="bg-deep">
+    <section className="bg-midnight">
       <div className="section-divider" />
       <div className="section-container space-y-10">
         {/* Statement */}
@@ -21,22 +21,20 @@ const NarrativeUrgency = () => {
           className="text-center space-y-6"
         >
           <h2 className="headline-secondary">
-            Essa é a primeira vez que eu trago em público, com profundidade, tudo o que funcionou
-            pra mim e pros meus clientes.
+            Esta é a primeira vez que eu trago isso em público —{" "}
+            <span className="marker-highlight">com profundidade real.</span>
           </h2>
 
-          <p className="text-electric font-bold text-xl">
-            Sugiro fortemente que{" "}
-            <span className="marker-highlight font-handwritten text-2xl">você participe.</span>
+          <p className="text-muted-foreground text-base max-w-md mx-auto">
+            Você não vai encontrar isso em curso gratuito, YouTube ou post de Instagram.
+          </p>
+          <p className="text-muted-foreground text-base max-w-md mx-auto">
+            O que vou mostrar aqui é o sistema completo que aplico com clientes que me pagam{" "}
+            <strong className="text-foreground">muito mais do que R$59,90</strong> por isso.
           </p>
 
-          <p className="text-muted-foreground text-base max-w-md mx-auto">
-            Você não sabe quando será a próxima vez, e, sinceramente,{" "}
-            <strong className="text-foreground">nem eu sei.</strong>{" "}
-            Dedique um dia pra encerrar esse ciclo:{" "}
-            <span className="text-alert">esforço</span>,{" "}
-            <span className="text-alert">esperança</span> e{" "}
-            <span className="text-alert">frustração</span>.
+          <p className="text-electric font-bold text-xl">
+            Se você quer parar de ter lead e não converter:
           </p>
         </motion.div>
 
@@ -48,11 +46,11 @@ const NarrativeUrgency = () => {
           className="space-y-6"
         >
           <div className="text-center">
-            <p className="text-sm text-muted-foreground">Então você precisa participar do</p>
+            <p className="text-sm text-muted-foreground">Você precisa do</p>
             <h3 className="font-handwritten text-electric text-3xl md:text-4xl mt-1">
               Workshop Clínica Capilar <span className="text-foreground">Lucrativa</span>
             </h3>
-            <p className="text-muted-foreground text-sm mt-2">se quer:</p>
+            <p className="text-muted-foreground text-sm mt-2">se quiser:</p>
           </div>
 
           <div className="space-y-2 max-w-md mx-auto">

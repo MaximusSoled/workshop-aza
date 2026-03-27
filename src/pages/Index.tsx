@@ -13,10 +13,9 @@ const UniqueMethod = lazy(() => import("@/components/lp/UniqueMethod"));
 const SpecialistStory = lazy(() => import("@/components/lp/SpecialistStory"));
 const NarrativeUrgency = lazy(() => import("@/components/lp/NarrativeUrgency"));
 const HowItWorks = lazy(() => import("@/components/lp/HowItWorks"));
-const EventSchedule = lazy(() => import("@/components/lp/EventSchedule"));
-const OfferSection = lazy(() => import("@/components/lp/OfferSection"));
-const TestimonialsSection = lazy(() => import("@/components/lp/TestimonialsSection"));
 const AuthoritySection = lazy(() => import("@/components/lp/AuthoritySection"));
+const TestimonialsSection = lazy(() => import("@/components/lp/TestimonialsSection"));
+const OfferSection = lazy(() => import("@/components/lp/OfferSection"));
 const FaqSection = lazy(() => import("@/components/lp/FaqSection"));
 const FloatingCTA = lazy(() => import("@/components/lp/FloatingCTA"));
 
@@ -33,7 +32,6 @@ const Index = () => {
         <SpecialistStory />
         <NarrativeUrgency />
         <HowItWorks />
-        <EventSchedule />
         <AuthoritySection />
         <TestimonialsSection />
         <OfferSection />

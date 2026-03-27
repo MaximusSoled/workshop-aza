@@ -11,17 +11,17 @@ import {
 
 const testimonials = [
   {
-    name: "Dr. Rafael",
+    name: "Rafael",
     videoId: "xDK42rroFYE",
-    headline: "TRIPLICOU O NÚMERO DE PACIENTES EM 3 MESES",
+    headline: "FECHOU 14 IMPLANTES CAPILARES NO PRIMEIRO MÊS",
     description:
-      "O Rafael tinha uma clínica parada, sem previsibilidade. Depois de aplicar o método, fechou 14 implantes capilares no primeiro mês.",
+      "Rafael tinha clínica parada, sem previsibilidade. Depois de aplicar o método, fechou 14 implantes capilares no primeiro mês.",
   },
   {
-    name: "Dra. Camila",
+    name: "Camila",
     headline: "SAIU DE 2 PARA 11 PROCEDIMENTOS POR MÊS",
     description:
-      "A Camila achava que precisava de mais seguidores. Descobriu que o problema era o processo comercial e hoje tem fila de espera.",
+      "A Camila achava que o problema era mais seguidores. Saiu de 2 para 11 procedimentos por mês depois que entendeu que o problema era o processo comercial.",
   },
   {
     name: "Dr. André",
@@ -70,7 +70,7 @@ const LazyYouTube = ({ videoId, title }: { videoId: string; title: string }) => 
 
 const TestimonialsSection = () => {
   return (
-    <section className="bg-midnight overflow-x-clip">
+    <section className="bg-deep overflow-x-clip">
       <div className="section-divider" />
       <div className="section-container space-y-10">
         <motion.h2
@@ -81,7 +81,7 @@ const TestimonialsSection = () => {
         >
           Clínicas que já aplicam o{" "}
           <span className="marker-highlight">Método R.U.M.O.</span>{" "}
-          e colhem resultados:
+          e fecham mais cirurgias:
         </motion.h2>
 
         <Carousel opts={{ align: "start", loop: true }} className="w-full max-w-2xl mx-auto overflow-hidden">
@@ -95,7 +95,6 @@ const TestimonialsSection = () => {
                   transition={{ delay: i * 0.1 }}
                   className="rounded-2xl border border-border bg-card overflow-hidden flex flex-col h-full"
                 >
-                  {/* Video */}
                   <div className="relative aspect-video bg-secondary">
                     {item.videoId ? (
                       <LazyYouTube videoId={item.videoId} title={`Depoimento ${item.name}`} />
@@ -108,7 +107,6 @@ const TestimonialsSection = () => {
                     )}
                   </div>
 
-                  {/* Content */}
                   <div className="p-4 flex-1 flex flex-col gap-2">
                     <h3 className="text-sm md:text-base font-bold text-foreground leading-tight">
                       {item.headline}

@@ -1,73 +1,95 @@
 import { motion } from "framer-motion";
 
-const actions = [
-  { text: "investiu mais em anúncios", handwritten: true },
-  { text: "trocou de agência", handwritten: true },
-  { text: "contratou secretária nova", handwritten: true },
-  { text: "tentou fazer conteúdo", handwritten: true },
-  { text: "trabalhou fim de semana", handwritten: true },
-];
-
-const extraActions = [
-  "Seguiu o conselho do colega.",
-  "Gravou quando não sabia o que dizer...",
-  "...se forçou a investir mais sem saber se ia voltar.",
+const cycleSteps = [
+  "Investe em tráfego",
+  "Lead chega",
+  "Lead não converte",
+  "Culpa o tráfego",
+  "Troca de agência",
+  "Investe de novo",
 ];
 
 const BehaviorMirror = () => {
   return (
-    <section className="bg-deep">
+    <section className="bg-midnight">
       <div className="section-divider" />
       <div className="section-container space-y-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center space-y-10"
+          className="text-center space-y-4"
         >
-          <h2 className="text-2xl md:text-3xl">
-            E você <span className="font-handwritten text-electric text-4xl md:text-5xl">obedeceu...</span>
+          <p className="text-base md:text-lg text-muted-foreground">
+            Às vezes você fecha uma cirurgia. Sente que está no caminho.
+          </p>
+          <h2 className="text-2xl md:text-3xl font-extrabold">
+            No mês seguinte, a agenda{" "}
+            <span className="font-handwritten text-alert text-3xl md:text-4xl">esvazia de novo.</span>
           </h2>
+        </motion.div>
 
-          {/* Action cards */}
-          <div className="space-y-4 max-w-sm mx-auto">
-            {actions.map((action, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-surface rounded-xl overflow-hidden border border-border"
-              >
-                <div className="h-2 gradient-electric" />
-                <p className="font-handwritten text-2xl md:text-3xl py-4 px-5 text-muted-foreground">
-                  {action.text}
-                </p>
-              </motion.div>
+        {/* Pain name */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center space-y-3"
+        >
+          <p className="text-muted-foreground text-sm">Isso tem nome.</p>
+          <h3 className="text-2xl md:text-3xl font-extrabold">
+            Eu chamo de{" "}
+            <span className="font-handwritten text-electric text-4xl md:text-5xl marker-highlight">
+              Ciclo da Clínica Capilar Instável
+            </span>
+          </h3>
+          <p className="text-muted-foreground text-sm mt-2">Funciona assim:</p>
+        </motion.div>
+
+        {/* Cycle diagram */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="relative max-w-md mx-auto"
+        >
+          <div className="grid grid-cols-2 gap-3">
+            {cycleSteps.map((step, i) => (
+              <div key={i} className="cycle-step">
+                <span className="text-electric font-bold mr-1">{i + 1}.</span>
+                {step}
+              </div>
             ))}
           </div>
-
-          {/* Extra emotional escalation */}
-          <div className="space-y-3">
-            {extraActions.map((text, i) => (
-              <motion.p
-                key={i}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 + i * 0.15 }}
-                className={`text-base ${
-                  i === extraActions.length - 1
-                    ? "text-foreground font-semibold italic"
-                    : "text-muted-foreground"
-                }`}
-              >
-                {text}
-              </motion.p>
-            ))}
+          <div className="text-center mt-4">
+            <span className="font-handwritten text-3xl text-alert">🔄 O ciclo recomeça</span>
           </div>
+          <p className="text-center text-xs text-muted-foreground mt-3 italic">
+            Cada volta nesse ciclo custa dinheiro, tempo e energia que não voltam.
+          </p>
+        </motion.div>
+
+        {/* Root cause */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="bubble-electric max-w-lg mx-auto text-center space-y-3"
+        >
+          <p className="text-muted-foreground">
+            E o pior: <span className="text-foreground font-semibold">o problema nunca foi o lead.</span>
+          </p>
+          <p className="text-muted-foreground">
+            O problema é o que acontece depois que o lead chega na sua clínica.{" "}
+            <span className="text-foreground font-semibold underline decoration-brand-electric">Ninguém te ensinou a converter.</span>
+          </p>
+          <p className="text-muted-foreground">
+            Te ensinaram a <span className="strike-through">atrair</span>.
+          </p>
+          <p className="font-bold text-lg text-foreground">
+            E existe uma <span className="font-handwritten text-electric text-3xl">diferença brutal</span>{" "}
+            entre as duas coisas.
+          </p>
         </motion.div>
       </div>
     </section>

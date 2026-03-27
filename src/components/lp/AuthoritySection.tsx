@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import hiagoPhoto from "@/assets/hiago-photo.png";
+
 const AuthoritySection = () => {
   return (
     <section className="bg-midnight">
@@ -29,7 +30,6 @@ const AuthoritySection = () => {
             <div className="w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden mx-auto border-4 border-brand-electric/30 glow-electric">
               <img src={hiagoPhoto} alt="Hiago Lemos" className="w-full h-full object-cover" loading="lazy" />
             </div>
-            {/* Decorative elements */}
             <div className="absolute -top-2 -right-2 w-6 h-6 text-electric animate-float">✦</div>
             <div className="absolute -bottom-1 -left-3 w-4 h-4 text-electric animate-float" style={{ animationDelay: '1s' }}>✦</div>
           </div>
@@ -42,7 +42,7 @@ const AuthoritySection = () => {
           </p>
         </motion.div>
 
-        {/* Bio in handwritten style */}
+        {/* Bio */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -50,26 +50,24 @@ const AuthoritySection = () => {
           className="max-w-lg mx-auto space-y-4"
         >
           <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center">
-            Eu passei anos fazendo o que todo mundo mandava: investindo mais, trocando de agência,
-            seguindo "fórmula mágica". E flopando.
-          </p>
-          <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center">
-            Até entender que o problema não era falta de esforço, era falta de método.
-          </p>
-          <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center">
-            Mergulhei em comportamento do paciente estético. Estudei o que realmente faz
-            uma clínica capilar crescer de forma previsível. E então criei o{" "}
-            <span className="text-electric font-semibold">Método R.U.M.O.</span>
-          </p>
-          <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center">
-            Apliquei com dezenas de clínicas — e os resultados foram{" "}
-            <span className="text-electric font-semibold">consistentes</span>.
+            Eu poderia escrever aqui que sou especialista, que tenho anos de experiência, que já atendi centenas de clínicas.
           </p>
           <p className="text-sm md:text-base text-foreground leading-relaxed text-center font-semibold">
-            Sem hack, sem trend, sem fórmula mágica. Só sistema certo, com execução certa.
+            Mas o que importa para você é o seguinte:
           </p>
-          <p className="text-sm md:text-base text-muted-foreground text-center italic">
-            É isso que eu ensino. E é isso que você vai aprender no workshop.
+          <p className="text-sm md:text-base text-electric leading-relaxed text-center font-bold">
+            Eu resolvo um problema específico.
+          </p>
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center">
+            Clínicas capilares que têm leads chegando — mas não estão convertendo esses leads em cirurgias.
+          </p>
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center">
+            Já apliquei o <span className="text-electric font-semibold">Método R.U.M.O.</span> com dezenas de clínicas.
+            Os resultados foram <span className="text-electric font-semibold">consistentes</span> porque o método funciona
+            independente de quem está na secretaria, de qual agência você usa ou de quanto você investe em tráfego.
+          </p>
+          <p className="text-sm md:text-base text-foreground leading-relaxed text-center font-semibold">
+            Sem hack. Sem trend. Só sistema certo com execução certa.
           </p>
         </motion.div>
       </div>

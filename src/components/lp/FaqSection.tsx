@@ -82,14 +82,13 @@ const FaqSection = () => {
             <span className="text-electric font-semibold">pronto para aplicar na semana seguinte.</span>
           </p>
 
-          <Button
-            variant="cta"
-            size="lg"
-            className="py-6 px-10 text-base"
+          <button
+            className="hero-cta-btn group !py-3.5 !px-8 !rounded-xl"
             onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
           >
-            Garantir minha vaga agora →
-          </Button>
+            <span className="text-sm font-bold tracking-wide uppercase">Garantir minha vaga agora</span>
+            <ArrowRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-1" />
+          </button>
 
           <p className="text-xs text-muted-foreground">
             🔒 Vagas limitadas · Pagamento 100% seguro

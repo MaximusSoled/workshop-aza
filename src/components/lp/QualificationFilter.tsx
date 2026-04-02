@@ -20,7 +20,7 @@ const QualificationFilter = () => {
         >
           <h2 className="text-2xl md:text-3xl font-extrabold">
             Este workshop{" "}
-            <span className="font-handwritten text-electric text-3xl md:text-4xl marker-highlight">
+            <span className="font-handwritten text-alert text-3xl md:text-4xl marker-alert">
               não foi criado
             </span>{" "}
             para quem ainda está tentando fazer o básico funcionar

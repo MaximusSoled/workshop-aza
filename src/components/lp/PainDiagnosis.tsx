@@ -22,7 +22,7 @@ const PainDiagnosis = () => {
         >
           <h2 className="headline-secondary">
             Você pode fazer parte dos{" "}
-            <span className="font-handwritten text-electric text-4xl md:text-5xl">5%</span>{" "}
+            <span className="font-handwritten text-electric text-4xl md:text-5xl">20%</span>{" "}
             que fecham{" "}
             <span className="font-handwritten text-electric text-4xl md:text-5xl">80% das cirurgias</span>
           </h2>

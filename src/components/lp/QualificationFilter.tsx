@@ -38,7 +38,7 @@ const QualificationFilter = () => {
             Se hoje a sua operação ainda depende de ações pontuais, testes constantes ou falta clareza sobre como gerar demanda de forma consistente…
           </p>
           <p className="text-foreground font-semibold">
-            <span className="marker-alert">este não é o melhor momento.</span>
+            <span className="marker-alert">este Workshop não é para você.</span>
           </p>
           <p className="text-center text-muted-foreground text-lg font-semibold">Agora…</p>
           <p>

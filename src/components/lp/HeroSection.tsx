@@ -56,7 +56,7 @@ const HeroSection = () => {
           </div>
 
           {/* Subheadline */}
-          <p className="mx-auto max-w-[21.5rem] text-xs leading-relaxed text-muted-foreground sm:max-w-sm md:text-sm [text-wrap:pretty]">
+          <p className="mx-auto max-w-[21.5rem] text-sm leading-relaxed text-muted-foreground sm:max-w-sm md:text-base [text-wrap:pretty]">
             Se hoje sua clínica já recebe contatos no WhatsApp mas isso não se transforma em procedimentos fechados com consistência, é porque ainda não existe um processo claro de conversão
           </p>
 

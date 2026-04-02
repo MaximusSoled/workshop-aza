@@ -26,12 +26,12 @@ const HeroSection = () => {
       </div>
 
       {/* Content overlapping banner fade */}
-      <div className="relative z-10 -mt-10 md:-mt-16 mx-auto w-full max-w-2xl px-4 sm:px-6 pb-6 pt-12 md:pt-16">
+      <div className="relative z-10 -mt-10 md:-mt-16 mx-auto w-full max-w-2xl px-4 sm:px-6 pb-6 pt-8 md:pt-16">
         <motion.div
           initial={slideUp}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: reducedMotion ? 0.1 : 0.8, delay: reducedMotion ? 0 : 0.3 }}
-          className="flex flex-col items-center space-y-6 text-center"
+          className="flex flex-col items-center space-y-4 text-center"
         >
           {/* Info badges */}
           <div className="flex max-w-max flex-wrap justify-center gap-2">
@@ -46,19 +46,21 @@ const HeroSection = () => {
           </div>
 
           {/* Headline */}
-          <div className="mx-auto max-w-[21rem] space-y-2 sm:max-w-xl">
-            <p className="text-base md:text-lg font-bold text-muted-foreground">
+          <div className="mx-auto max-w-[20rem] space-y-1.5 sm:max-w-lg">
+            <p className="text-sm md:text-base font-bold text-muted-foreground">
               Especialista em implante capilar,
             </p>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight [text-wrap:balance]">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold leading-snug [text-wrap:balance]">
               Vou te mostrar o exato sistema que aplico nos meus clientes para CONVERTER os leads do seu Whatsapp em VENDAS
             </h1>
           </div>
 
           {/* Subheadline */}
-          <p className="mx-auto max-w-[20.75rem] text-sm leading-relaxed text-muted-foreground sm:max-w-lg md:text-base [text-wrap:pretty]">
+          <p className="mx-auto max-w-[19rem] text-xs leading-relaxed text-muted-foreground sm:max-w-md md:text-sm [text-wrap:pretty]">
             Se hoje sua clínica já recebe contatos no WhatsApp mas isso não se transforma em procedimentos fechados com consistência, é porque ainda não existe um processo claro de conversão
-            <br /><br />
+          </p>
+
+          <p className="mx-auto max-w-[19rem] text-xs leading-relaxed text-muted-foreground sm:max-w-md md:text-sm [text-wrap:pretty]">
             <strong className="text-foreground">Ao vivo,</strong> vamos construir seu{" "}
             <strong className="text-foreground">sistema de conversão</strong> utilizando o{" "}
             <strong className="text-foreground">Método R.U.M.O.</strong> você vai sair com um{" "}

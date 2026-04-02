@@ -51,8 +51,7 @@ const HeroSection = () => {
               Especialista em implante capilar,
             </p>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight [text-wrap:balance]">
-              Vou te mostrar o exato sistema que aplico para CONVERTER os leads da sua agenda em VENDAS sua clínica vai{" "}
-              <span className="text-electric">fechar mais cirurgias</span>
+              Vou te mostrar o exato sistema que aplico nos meus clientes para CONVERTER os leads do seu Whatsapp em VENDAS
             </h1>
           </div>
 

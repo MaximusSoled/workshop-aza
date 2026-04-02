@@ -36,6 +36,7 @@ const FloatingCTA = () => {
     <AnimatePresence mode="wait">
       {visible && (
         <motion.div
+          key="floating-cta"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}

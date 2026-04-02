@@ -57,7 +57,9 @@ const HeroSection = () => {
 
           {/* Subheadline */}
           <p className="mx-auto max-w-[20.75rem] text-sm leading-relaxed text-muted-foreground sm:max-w-lg md:text-base [text-wrap:pretty]">
-            <strong className="text-foreground">Ao vivo</strong> vamos construir seu{" "}
+            Se hoje sua clínica já recebe contatos no WhatsApp mas isso não se transforma em procedimentos fechados com consistência, é porque ainda não existe um processo claro de conversão
+            <br /><br />
+            <strong className="text-foreground">Ao vivo,</strong> vamos construir seu{" "}
             <strong className="text-foreground">sistema de conversão</strong> utilizando o{" "}
             <strong className="text-foreground">Método R.U.M.O.</strong> você vai sair com um{" "}
             <span className="marker-highlight font-semibold text-foreground">plano de ação pronto</span>{" "}

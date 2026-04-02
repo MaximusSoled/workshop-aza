@@ -51,14 +51,15 @@ const HeroSection = () => {
               Especialista em implante capilar,
             </p>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight [text-wrap:balance]">
-              Vou te mostrar o exato sistema que aplico para CONVERTER os leads da sua agenda em VENDAS sua clínica vai{" "}
-              <span className="text-electric">fechar mais cirurgias</span>
+              Vou te mostrar o exato sistema que aplico nos meus clientes para CONVERTER os leads do seu Whatsapp em VENDAS
             </h1>
           </div>
 
           {/* Subheadline */}
           <p className="mx-auto max-w-[20.75rem] text-sm leading-relaxed text-muted-foreground sm:max-w-lg md:text-base [text-wrap:pretty]">
-            <strong className="text-foreground">Ao vivo</strong> vamos construir seu{" "}
+            Se hoje sua clínica já recebe contatos no WhatsApp mas isso não se transforma em procedimentos fechados com consistência, é porque ainda não existe um processo claro de conversão
+            <br /><br />
+            <strong className="text-foreground">Ao vivo,</strong> vamos construir seu{" "}
             <strong className="text-foreground">sistema de conversão</strong> utilizando o{" "}
             <strong className="text-foreground">Método R.U.M.O.</strong> você vai sair com um{" "}
             <span className="marker-highlight font-semibold text-foreground">plano de ação pronto</span>{" "}

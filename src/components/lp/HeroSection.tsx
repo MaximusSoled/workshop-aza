@@ -50,7 +50,7 @@ const HeroSection = () => {
             <p className="text-sm md:text-base font-bold text-muted-foreground">
               Especialista em implante capilar,
             </p>
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold leading-snug [text-wrap:balance]">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-snug [text-wrap:balance]">
               Vou te mostrar o exato sistema que aplico nos meus clientes para CONVERTER os leads do seu Whatsapp em VENDAS
             </h1>
           </div>

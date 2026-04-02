@@ -50,17 +50,17 @@ const HeroSection = () => {
             <p className="text-sm md:text-base font-bold text-muted-foreground">
               Especialista em implante capilar,
             </p>
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold leading-snug [text-wrap:balance]">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-snug [text-wrap:balance]">
               Vou te mostrar o exato sistema que aplico nos meus clientes para CONVERTER os leads do seu Whatsapp em VENDAS
             </h1>
           </div>
 
           {/* Subheadline */}
-          <p className="mx-auto max-w-[21.5rem] text-xs leading-relaxed text-muted-foreground sm:max-w-sm md:text-sm [text-wrap:pretty]">
+          <p className="mx-auto max-w-[21.5rem] text-sm leading-relaxed text-muted-foreground sm:max-w-sm md:text-base [text-wrap:pretty]">
             Se hoje sua clínica já recebe contatos no WhatsApp mas isso não se transforma em procedimentos fechados com consistência, é porque ainda não existe um processo claro de conversão
           </p>
 
-          <p className="mx-auto max-w-[21.5rem] text-xs leading-relaxed text-muted-foreground sm:max-w-sm md:text-sm [text-wrap:pretty]">
+          <p className="mx-auto max-w-[21.5rem] text-sm leading-relaxed text-muted-foreground sm:max-w-sm md:text-base [text-wrap:pretty]">
             <strong className="text-foreground">Ao vivo,</strong> vamos construir seu{" "}
             <strong className="text-foreground">sistema de conversão</strong> utilizando o{" "}
             <strong className="text-foreground">Método R.U.M.O.</strong> você vai sair com um{" "}

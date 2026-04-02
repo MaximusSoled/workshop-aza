@@ -60,7 +60,7 @@ const HeroSection = () => {
             Se hoje sua clínica já recebe contatos no WhatsApp mas isso não se transforma em procedimentos fechados com consistência, é porque ainda não existe um processo claro de conversão
           </p>
 
-          <p className="mx-auto max-w-[21.5rem] text-sm leading-relaxed text-muted-foreground sm:max-w-sm md:text-base [text-wrap:pretty]">
+          <p className="mx-auto max-w-[21.5rem] text-[0.8rem] leading-relaxed text-muted-foreground sm:max-w-sm md:text-sm [text-wrap:pretty]">
             <strong className="text-foreground">Ao vivo,</strong> vamos construir seu{" "}
             <strong className="text-foreground">sistema de conversão</strong> utilizando o{" "}
             <strong className="text-foreground">Método R.U.M.O.</strong> você vai sair com um{" "}

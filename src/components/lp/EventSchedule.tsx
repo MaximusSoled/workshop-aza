@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Clock, Calendar, Video, Lock } from "lucide-react";
 
 const schedule = [
@@ -47,7 +47,7 @@ const EventSchedule = () => {
         {/* Timeline */}
         <div className="max-w-sm mx-auto">
           {schedule.map((item, i) => (
-            <motion.div
+            <m.div
               key={i}
               initial={{ opacity: 0, x: -15 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -63,7 +63,7 @@ const EventSchedule = () => {
               <p className="text-sm font-medium text-foreground text-right max-w-[180px]">
                 {item.title}
               </p>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

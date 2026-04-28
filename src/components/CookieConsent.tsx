@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Cookie } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -22,7 +22,7 @@ const CookieConsent = () => {
   return (
     <AnimatePresence mode="wait">
       {visible && (
-        <motion.div
+        <m.div
           key="cookie-consent"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -56,7 +56,7 @@ const CookieConsent = () => {
               </button>
             </div>
           </div>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

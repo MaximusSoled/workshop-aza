@@ -1,11 +1,10 @@
-import { motion } from "framer-motion";
-import heroBanner from "@/assets/hero-banner.png";
+import { m } from "framer-motion";
+import heroBanner from "@/assets/hero-banner.webp";
 import { Calendar, Video, ArrowRight } from "lucide-react";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 const HeroSection = () => {
   const reducedMotion = useReducedMotion();
-  const fadeIn = reducedMotion ? { duration: 0.1 } : { duration: 0.7 };
   const slideUp = reducedMotion
     ? { opacity: 1, y: 0 }
     : { opacity: 0, y: 30 };
@@ -26,8 +25,8 @@ const HeroSection = () => {
       </div>
 
       {/* Content overlapping banner fade */}
-      <div className="relative z-10 -mt-10 md:-mt-16 mx-auto w-full max-w-2xl px-4 sm:px-6 pb-6 pt-8 md:pt-16">
-        <motion.div
+      <div className="relative z-10 -mt-10 md:-mt-16 mx-auto w-full max-w-2xl md:max-w-4xl px-4 sm:px-6 md:px-16 pb-6 pt-8 md:pt-16">
+        <m.div
           initial={slideUp}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: reducedMotion ? 0.1 : 0.8, delay: reducedMotion ? 0 : 0.3 }}
@@ -46,36 +45,30 @@ const HeroSection = () => {
           </div>
 
           {/* Headline */}
-          <div className="mx-auto max-w-[21.5rem] space-y-1.5 sm:max-w-sm">
+          <div className="mx-auto max-w-[21.5rem] space-y-1.5 sm:max-w-sm md:max-w-full">
             <p className="text-sm md:text-base font-bold text-muted-foreground">
               Especialista em implante capilar,
             </p>
-            <h1 className="text-[1.35rem] sm:text-2xl md:text-3xl font-extrabold leading-snug [text-wrap:balance]">
-              Vou te mostrar o exato sistema que aplico nos meus clientes para CONVERTER os leads do seu Whatsapp em VENDAS
+            <h1 className="text-[1.1rem] sm:text-xl md:text-4xl font-extrabold leading-snug [text-wrap:balance]">
+              Ao vivo, juntos vamos construir seu sistema de conversão que vai transformar conversas no WhatsApp em transplante capilar.
             </h1>
           </div>
 
           {/* Subheadline */}
-          <p className="mx-auto max-w-[21.5rem] text-[0.8rem] leading-relaxed text-muted-foreground sm:max-w-sm md:text-sm [text-wrap:pretty]">
+          <p className="mx-auto max-w-[21.5rem] text-[0.8rem] leading-relaxed text-muted-foreground sm:max-w-sm md:max-w-xl md:text-base [text-wrap:pretty]">
             Se hoje sua clínica já recebe contatos no WhatsApp mas isso não se transforma em procedimentos fechados com consistência, é porque ainda não existe um processo claro de conversão
           </p>
 
-          <p className="mx-auto max-w-[21.5rem] text-[0.8rem] leading-relaxed text-muted-foreground sm:max-w-sm md:text-sm [text-wrap:pretty]">
-            <strong className="text-foreground">Ao vivo,</strong> vamos construir seu{" "}
-            <strong className="text-foreground">sistema de conversão</strong> utilizando o{" "}
-            <strong className="text-foreground">Método R.U.M.O.</strong> você vai sair com um{" "}
-            <span className="marker-highlight font-semibold text-foreground">plano de ação pronto</span>{" "}
-            para aplicar na sua clínica.
-          </p>
+
 
           {/* CTA Block */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="mx-auto w-full max-w-[21.5rem] sm:max-w-sm"
+            className="mx-auto w-full max-w-[21.5rem] sm:max-w-sm md:max-w-lg"
           >
-            <motion.div
+            <m.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.9 }}
@@ -99,7 +92,7 @@ const HeroSection = () => {
                   Ingressos vendidos
                 </p>
                 <div className="relative h-6 rounded-full overflow-hidden" style={{ background: "hsl(220 30% 15%)" }}>
-                  <motion.div
+                  <m.div
                     initial={{ width: 0 }}
                     animate={{ width: "63%" }}
                     transition={{ delay: 1.4, duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
@@ -109,14 +102,14 @@ const HeroSection = () => {
                       boxShadow: "0 0 20px hsl(228 100% 59% / 0.5), inset 0 1px 0 hsl(0 0% 100% / 0.15)",
                     }}
                   />
-                  <motion.span
+                  <m.span
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 3 }}
                     className="absolute inset-0 flex items-center justify-center text-xs font-black text-white drop-shadow-md"
                   >
                     63%
-                  </motion.span>
+                  </m.span>
                 </div>
               </div>
 
@@ -131,9 +124,9 @@ const HeroSection = () => {
                   <span className="hero-cta-lote text-[10px]">Lote 01</span>
                 </button>
               </div>
-            </motion.div>
-          </motion.div>
-        </motion.div>
+            </m.div>
+          </m.div>
+        </m.div>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { AlertCircle } from "lucide-react";
 
 const symptoms = [
@@ -12,7 +12,7 @@ const QualificationFilter = () => {
     <section className="bg-midnight">
       <div className="section-divider" />
       <div className="section-container space-y-10">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -25,9 +25,9 @@ const QualificationFilter = () => {
             </span>{" "}
             para quem ainda está tentando fazer o básico funcionar
           </h2>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -49,9 +49,9 @@ const QualificationFilter = () => {
             Existe um{" "}
             <span className="font-handwritten text-alert text-2xl md:text-3xl">problema claro no processo.</span>
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -61,7 +61,7 @@ const QualificationFilter = () => {
           <p className="text-sm text-muted-foreground mb-4">E ele aparece de forma sutil no dia a dia:</p>
           <div className="space-y-3 max-w-md mx-auto">
             {symptoms.map((item, i) => (
-              <motion.div
+              <m.div
                 key={i}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -71,12 +71,12 @@ const QualificationFilter = () => {
               >
                 <AlertCircle className="w-4 h-4 text-alert flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-foreground">{item}</p>
-              </motion.div>
+              </m.div>
             ))}
           </div>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -91,7 +91,7 @@ const QualificationFilter = () => {
             <span className="font-handwritten text-electric text-2xl md:text-3xl">eu e você juntos</span>{" "}
             vamos resolver durante o workshop.
           </p>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

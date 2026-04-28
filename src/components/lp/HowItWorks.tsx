@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Play, Monitor, FileDown } from "lucide-react";
 
 const items = [
@@ -9,7 +9,7 @@ const items = [
   },
   {
     icon: Monitor,
-    title: "Workshop ao vivo — 9h às 18h — 100% prático",
+    title: "Workshop ao vivo: 9h às 18h, 100% prático",
     description: "Um dia inteiro construindo seu sistema de conversão. Você sai com o método montado, não apenas explicado.",
   },
   {
@@ -24,18 +24,18 @@ const HowItWorks = () => {
     <section className="bg-deep">
       <div className="section-divider" />
       <div className="section-container space-y-10">
-        <motion.h2
+        <m.h2
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="headline-secondary text-center uppercase tracking-wide"
         >
           Como vai funcionar?
-        </motion.h2>
+        </m.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {items.map((item, i) => (
-            <motion.div
+            <m.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ const HowItWorks = () => {
                   <span className="text-muted-foreground">{item.description}</span>
                 </p>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

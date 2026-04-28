@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Check, ShieldCheck, Users, Quote, Star, ArrowRight } from "lucide-react";
 
@@ -14,19 +14,33 @@ const miniTestimonials = [
 const OfferTestimonials = () => {
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const next = useCallback(() => {
     setCurrent((prev) => (prev + 1) % miniTestimonials.length);
   }, []);
 
   useEffect(() => {
-    if (isPaused) return;
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isPaused || !isVisible) return;
     const interval = setInterval(next, 5000);
     return () => clearInterval(interval);
-  }, [isPaused, next]);
+  }, [isPaused, next, isVisible]);
 
   return (
     <div
+      ref={containerRef}
       className="rounded-xl bg-background/20 border border-border/50 p-4 overflow-hidden relative min-h-[90px]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -40,7 +54,7 @@ const OfferTestimonials = () => {
       </div>
 
       <AnimatePresence mode="wait">
-        <motion.div
+        <m.div
           key={current}
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,7 +67,7 @@ const OfferTestimonials = () => {
             <p className="text-xs text-foreground/80 leading-relaxed italic">"{miniTestimonials[current].text}"</p>
             <p className="text-[11px] text-electric font-semibold mt-1.5">{miniTestimonials[current].name}</p>
           </div>
-        </motion.div>
+        </m.div>
       </AnimatePresence>
 
       <div className="absolute bottom-2.5 right-3 flex gap-1.5">
@@ -75,7 +89,7 @@ const OfferTestimonials = () => {
 };
 
 const included = [
-  "Workshop completo ao vivo (9h às 18h) — construção prática do seu sistema",
+  "Workshop completo ao vivo (9h às 18h): construção prática do seu sistema",
   "Método R.U.M.O. aplicado ao mercado de implante capilar",
   "Scripts de atendimento prontos para sua secretária usar amanhã",
   "Sistema de conversão + estrutura de funil para clínicas capilares",
@@ -99,7 +113,7 @@ const OfferSection = () => {
         </div>
 
         {/* Social proof bar */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -113,10 +127,10 @@ const OfferSection = () => {
           <span>
             <strong className="text-foreground">47 pessoas</strong> garantiram o ingresso nas últimas 24h
           </span>
-        </motion.div>
+        </m.div>
 
         {/* Offer card */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -200,7 +214,7 @@ const OfferSection = () => {
             {/* Depoimentos em carrossel */}
             <OfferTestimonials />
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

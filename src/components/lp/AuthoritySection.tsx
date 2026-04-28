@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import hiagoPhoto from "@/assets/hiago-photo.png";
+import { m } from "framer-motion";
+import hiagoPhoto from "@/assets/hiago-photo.webp";
 
 const AuthoritySection = () => {
   return (
@@ -7,7 +7,7 @@ const AuthoritySection = () => {
       <div className="section-divider" />
       <div className="section-container space-y-10">
         {/* Headline */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -17,10 +17,10 @@ const AuthoritySection = () => {
             Quem está por trás do{" "}
             <span className="font-handwritten text-electric text-3xl md:text-4xl">Método R.U.M.O.</span>
           </h2>
-        </motion.div>
+        </m.div>
 
         {/* Avatar & Name */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -40,10 +40,10 @@ const AuthoritySection = () => {
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
             Estrategista de crescimento para clínicas capilares
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Bio */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -59,7 +59,7 @@ const AuthoritySection = () => {
             Eu resolvo um problema específico.
           </p>
           <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center">
-            Clínicas capilares que têm leads chegando — mas não estão convertendo esses leads em cirurgias.
+            Clínicas capilares que têm leads chegando, mas não estão convertendo esses leads em cirurgias.
           </p>
           <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center">
             Já apliquei o <span className="text-electric font-semibold">Método R.U.M.O.</span> com dezenas de clínicas.
@@ -69,7 +69,7 @@ const AuthoritySection = () => {
           <p className="text-sm md:text-base text-foreground leading-relaxed text-center font-semibold">
             Sem hack. Sem trend. Só sistema certo com execução certa.
           </p>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

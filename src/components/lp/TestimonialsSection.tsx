@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Play } from "lucide-react";
 import {
   Carousel,
@@ -73,7 +73,7 @@ const TestimonialsSection = () => {
     <section className="bg-deep overflow-x-clip">
       <div className="section-divider" />
       <div className="section-container space-y-10">
-        <motion.h2
+        <m.h2
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -82,13 +82,13 @@ const TestimonialsSection = () => {
           Clínicas que já aplicam o{" "}
           <span className="marker-highlight">Método R.U.M.O.</span>{" "}
           e fecham mais cirurgias:
-        </motion.h2>
+        </m.h2>
 
         <Carousel opts={{ align: "start", loop: true }} className="w-full max-w-2xl mx-auto overflow-hidden">
           <CarouselContent className="ml-0">
             {testimonials.map((item, i) => (
               <CarouselItem key={i} className="basis-[88%] pl-0 pr-3 sm:basis-[82%] md:basis-1/2 md:pr-4">
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -115,7 +115,7 @@ const TestimonialsSection = () => {
                       {item.description}
                     </p>
                   </div>
-                </motion.div>
+                </m.div>
               </CarouselItem>
             ))}
           </CarouselContent>

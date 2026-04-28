@@ -1,41 +1,52 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { m, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const FloatingCTA = () => {
   const [visible, setVisible] = useState(false);
+  const pastThresholdRef = useRef(false);
+  const inOfferRef = useRef(false);
 
   useEffect(() => {
+    const updateVisible = () => {
+      setVisible(pastThresholdRef.current && !inOfferRef.current);
+    };
+
     let ticking = false;
     const handleScroll = () => {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
-        const threshold = window.innerHeight * 1.5;
-        const pastThreshold = window.scrollY > threshold;
-
-        // Hide when the offer section is in view
-        const offerEl = document.getElementById("oferta");
-        let inOfferSection = false;
-        if (offerEl) {
-          const rect = offerEl.getBoundingClientRect();
-          // Section is "in view" when its top is above viewport bottom and bottom is below viewport top
-          inOfferSection = rect.top < window.innerHeight && rect.bottom > 0;
-        }
-
-        setVisible(pastThreshold && !inOfferSection);
+        pastThresholdRef.current = window.scrollY > window.innerHeight * 1.5;
+        updateVisible();
         ticking = false;
       });
     };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    const offerEl = document.getElementById("oferta");
+    let observer: IntersectionObserver | null = null;
+    if (offerEl) {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          inOfferRef.current = entry.isIntersecting;
+          updateVisible();
+        },
+        { threshold: 0 }
+      );
+      observer.observe(offerEl);
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer?.disconnect();
+    };
   }, []);
 
   return (
     <AnimatePresence mode="wait">
       {visible && (
-        <motion.div
+        <m.div
           key="floating-cta"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -64,7 +75,7 @@ const FloatingCTA = () => {
                 </div>
                 <div className="px-4 space-y-1.5">
                   <div className="relative h-4 rounded-full overflow-hidden" style={{ background: "hsl(220 30% 15%)" }}>
-                    <motion.div
+                    <m.div
                       initial={{ width: 0 }}
                       animate={{ width: "63%" }}
                       transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
@@ -98,7 +109,7 @@ const FloatingCTA = () => {
                 </div>
               </div>
             </div>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

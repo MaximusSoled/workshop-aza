@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const cycleSteps = [
   "Investe em tráfego",
@@ -14,7 +14,7 @@ const BehaviorMirror = () => {
     <section className="bg-midnight">
       <div className="section-divider" />
       <div className="section-container space-y-10">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -27,10 +27,10 @@ const BehaviorMirror = () => {
             No mês seguinte, a agenda{" "}
             <span className="font-handwritten text-alert text-3xl md:text-4xl">esvazia de novo.</span>
           </h2>
-        </motion.div>
+        </m.div>
 
         {/* Pain name */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -44,10 +44,10 @@ const BehaviorMirror = () => {
             </span>
           </h3>
           <p className="text-muted-foreground text-sm mt-2">Funciona assim:</p>
-        </motion.div>
+        </m.div>
 
         {/* Cycle diagram */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -67,10 +67,10 @@ const BehaviorMirror = () => {
           <p className="text-center text-xs text-muted-foreground mt-3 italic">
             Cada volta nesse ciclo custa dinheiro, tempo e energia que não voltam.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Root cause */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -90,7 +90,7 @@ const BehaviorMirror = () => {
             E existe uma <span className="font-handwritten text-electric text-3xl">diferença brutal</span>{" "}
             entre as duas coisas.
           </p>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

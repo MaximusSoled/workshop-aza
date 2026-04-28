@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 import {
@@ -11,7 +11,7 @@ import {
 const faqs = [
   {
     q: "Se eu não puder assistir ao vivo, perco o conteúdo?",
-    a: "Não. Você recebe acesso à gravação. Mas recomendo fortemente assistir ao vivo — o workshop tem construção prática em tempo real.",
+    a: "Não. Você recebe acesso à gravação. Mas recomendo fortemente assistir ao vivo: o workshop tem construção prática em tempo real.",
   },
   {
     q: "Funciona para clínica pequena, de 1 ou 2 pessoas?",
@@ -23,11 +23,11 @@ const faqs = [
   },
   {
     q: "Meu problema é o tráfego, não a conversão. Este workshop serve?",
-    a: "Se seus leads chegam mas não viram cirurgia — o problema não é o tráfego. Este workshop foi feito exatamente para você.",
+    a: "Se seus leads chegam mas não viram cirurgia, o problema não é o tráfego. Este workshop foi feito exatamente para você.",
   },
   {
     q: "Preciso já investir em tráfego pago?",
-    a: "Não. O método funciona com qualquer volume de leads — orgânico ou pago. O que muda é o sistema que você usa para converter.",
+    a: "Não. O método funciona com qualquer volume de leads, orgânico ou pago. O que muda é o sistema que você usa para converter.",
   },
   {
     q: "Serve para agências ou profissionais de marketing?",
@@ -65,7 +65,7 @@ const FaqSection = () => {
         </Accordion>
 
         {/* Final CTA */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -79,12 +79,12 @@ const FaqSection = () => {
             Você tem o tráfego. Você tem a estrutura. O que falta é o sistema que transforma esse lead em paciente.
           </p>
           <p className="text-sm text-muted-foreground max-w-md mx-auto">
-            Garanta sua vaga agora e saia do workshop com o sistema montado —{" "}
+            Garanta sua vaga agora e saia do workshop com o sistema montado,{" "}
             <span className="text-electric font-semibold">pronto para aplicar na semana seguinte.</span>
           </p>
 
           <button
-            className="hero-cta-btn group !py-3.5 !px-8 !rounded-xl"
+            className="hero-cta-btn group !py-3.5 !px-8 !rounded-xl mx-auto"
             onClick={() => document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" })}
           >
             <span className="text-sm font-bold tracking-wide uppercase">Garantir minha vaga agora</span>
@@ -94,7 +94,7 @@ const FaqSection = () => {
           <p className="text-xs text-muted-foreground">
             🔒 Vagas limitadas · Pagamento 100% seguro
           </p>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

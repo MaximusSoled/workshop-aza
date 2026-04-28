@@ -1,11 +1,11 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const SpecialistStory = () => {
   return (
     <section className="bg-deep">
       <div className="section-divider" />
       <div className="section-container space-y-10">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -15,10 +15,10 @@ const SpecialistStory = () => {
           <h2 className="font-handwritten text-electric text-4xl md:text-5xl">
             eu vivia exatamente isso.
           </h2>
-        </motion.div>
+        </m.div>
 
         {/* Story */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -30,10 +30,10 @@ const SpecialistStory = () => {
             <span className="text-alert font-semibold">Flopava.</span> Recomeçava.
           </p>
           <p>Até que alguém me disse algo que mudou tudo:</p>
-        </motion.div>
+        </m.div>
 
         {/* Quote */}
-        <motion.blockquote
+        <m.blockquote
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -47,10 +47,10 @@ const SpecialistStory = () => {
           <div className="gradient-electric inline-block px-5 py-2 rounded-full">
             <span className="font-bold text-sm">ESSA FOI A VIRADA 🔑</span>
           </div>
-        </motion.blockquote>
+        </m.blockquote>
 
         {/* Discovery */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -78,7 +78,7 @@ const SpecialistStory = () => {
           <p className="text-foreground font-medium">
             É isso que você vai aprender aqui.
           </p>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

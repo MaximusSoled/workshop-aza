@@ -1,11 +1,11 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Check } from "lucide-react";
 
 const benefits = [
-  "Saber exatamente o que responder quando o lead chega — e parar de perder a cirurgia na primeira mensagem",
+  "Saber exatamente o que responder quando o lead chega. Parar de perder a cirurgia na primeira mensagem",
   "Montar um sistema de conversão que funciona mesmo quando você não está presente",
   "Fechar mais cirurgias sem depender de indicação, sorte ou agência nova",
-  "Ter agenda cheia com previsibilidade — não com esperança",
+  "Ter agenda cheia com previsibilidade. Chega de depender de esperança",
 ];
 
 const NarrativeUrgency = () => {
@@ -14,14 +14,14 @@ const NarrativeUrgency = () => {
       <div className="section-divider" />
       <div className="section-container space-y-10">
         {/* Statement */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center space-y-6"
         >
           <h2 className="headline-secondary">
-            Esta é a primeira vez que eu trago isso em público —{" "}
+            Esta é a primeira vez que eu trago isso em público,{" "}
             <span className="marker-highlight">com profundidade real.</span>
           </h2>
 
@@ -36,10 +36,10 @@ const NarrativeUrgency = () => {
           <p className="text-electric font-bold text-xl">
             Se você quer parar de ter lead e não converter:
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Benefits checklist */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -55,7 +55,7 @@ const NarrativeUrgency = () => {
 
           <div className="space-y-2 max-w-md mx-auto">
             {benefits.map((b, i) => (
-              <motion.div
+              <m.div
                 key={i}
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -65,10 +65,10 @@ const NarrativeUrgency = () => {
               >
                 <Check className="w-5 h-5 text-electric flex-shrink-0 mt-0.5" />
                 <span className="text-sm text-foreground">{b}</span>
-              </motion.div>
+              </m.div>
             ))}
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

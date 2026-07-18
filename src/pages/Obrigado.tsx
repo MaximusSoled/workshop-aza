@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import { CheckCircle, ArrowRight, Users, Lock, Pin, ChevronRight } from "lucide-react";
+import { ShinyButton } from "@/components/ui/shiny-button";
 
 const questions = [
   {
@@ -48,6 +49,49 @@ const Obrigado = () => {
   const [score, setScore] = useState<number | null>(null);
   const [accumulated, setAccumulated] = useState(0);
   const [done, setDone] = useState(false);
+
+  const handleWhatsAppRedirect = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const whatsappUrl = "https://chat.whatsapp.com/EhmeNZoLHOkGNxFS8N0bqU";
+    
+    // Generate UUID for deduplication
+    const eventId = (window.crypto && typeof window.crypto.randomUUID === 'function')
+      ? window.crypto.randomUUID()
+      : Date.now() + '-' + Math.random().toString(36).slice(2);
+
+    const payload = {
+      event_name: 'Lead',
+      event_id: eventId,
+      event_time: Math.floor(Date.now() / 1000),
+      event_source_url: window.location.href,
+      user_data: {}
+    };
+
+    // Client-side pixel tracking (fallback for standard Meta Pixel)
+    try {
+      if ((window as any).fbq) {
+        (window as any).fbq('track', 'Lead', {}, { eventID: eventId });
+      }
+    } catch (_) {}
+
+    // Redirect fallback timer (in case API takes longer than 900ms)
+    const timeout = setTimeout(() => {
+      window.location.href = whatsappUrl;
+    }, 900);
+
+    // Server-side Conversions API (CAPI) and GA4 event logging
+    fetch('/tracker', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: JSON.stringify(payload)
+    })
+      .catch(() => {})
+      .finally(() => {
+        clearTimeout(timeout);
+        window.location.href = whatsappUrl;
+      });
+  };
 
   const handleAnswer = (points: number) => {
     const next = accumulated + points;
@@ -239,20 +283,16 @@ const Obrigado = () => {
                     <p className="text-xs text-white/70 text-center font-medium">
                       Sua aula introdutória + instruções do workshop estão aqui
                     </p>
-                    <a
-                      href="#"
-                      className="flex items-center gap-2.5 px-5 py-3 rounded-xl font-bold text-white text-sm transition-all hover:scale-105 active:scale-100 shadow-lg"
-                      style={{
-                        background: "linear-gradient(135deg, #25D366, #1ebe5d)",
-                        boxShadow: "0 0 25px rgba(37, 211, 102, 0.45), 0 4px 15px rgba(0,0,0,0.3)",
-                      }}
+                    <ShinyButton
+                      onClick={handleWhatsAppRedirect}
+                      className="w-full max-w-[260px] !py-3 !px-4 flex items-center justify-center gap-2.5 font-bold"
                     >
                       {/* WhatsApp icon */}
                       <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white flex-shrink-0">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                       </svg>
                       Entrar no grupo agora
-                    </a>
+                    </ShinyButton>
                     <p className="text-[10px] text-white/40 flex items-center gap-1">
                       <Lock className="w-2.5 h-2.5" /> Exclusivo para compradores
                     </p>
